@@ -1,0 +1,17 @@
+name: flutter_readable
+description: A new Flutter package project.
+version: 0.0.1
+homepage: https://github.com/FlutterQueen/readable
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint: ^1.7.2

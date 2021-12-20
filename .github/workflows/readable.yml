@@ -1,0 +1,28 @@
+name: readable
+on:
+  push:
+    paths:
+      - "flutter_readable/**"
+      - ".github/workflows/readable.yml"
+  pull_request:
+    paths:
+      - "flutter_readable/**"
+      - ".github/workflows/readable.yml"
+jobs:
+  test:
+    defaults:
+      run:
+        working-directory: ./readable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "2.5.3"
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter test --coverage
+      - name: Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+        with:
+          path: "readable/coverage/lcov.info"
