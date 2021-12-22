@@ -6,15 +6,15 @@ void main() {
     'it return a List of Chars from String',
     () {
       expect(
-        "Falah".toChars,
+        "Falah".toChars(),
         ['F', 'a', 'l', 'a', 'h'],
       );
       expect(
-        "abcd".toChars,
+        "abcd".toChars(),
         ['a', 'b', 'c', 'd'],
       );
       expect(
-        ''.toChars,
+        ''.toChars(),
         [],
         reason: "because the List is Empty",
       );
