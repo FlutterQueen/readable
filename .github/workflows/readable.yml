@@ -1,10 +1,12 @@
 name: readable
 on:
   push:
+    branches: [master]
     paths:
       - "flutter_readable/**"
       - ".github/workflows/readable.yml"
   pull_request:
+    branches: [master]
     paths:
       - "flutter_readable/**"
       - ".github/workflows/readable.yml"
