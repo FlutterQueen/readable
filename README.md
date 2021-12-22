@@ -4,10 +4,18 @@
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 
-# Motivation
+## Motivation
 
-this package contains extension methods for most types in dart and helper functions to
+many cases requires to make a simple function or a little bit complicated one to solve a problem .
+since this cases are very common , we decided to make a library to solve as much of them as possible ,
 
-to make things more readable and avoid redundant extensions and
+## The Goal
+
+collection of helpers and extensions methods to :
+
+- more readable code.
+- easy to use helpers.
+- stable (this package will always be 100% test coverage)
+- make one more developer happy 💙.
 
 ## [Documentation](https://flutterqueen.github.io/website/)
