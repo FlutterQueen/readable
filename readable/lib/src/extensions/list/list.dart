@@ -1,5 +1,6 @@
 // import 'dart:async';
 import 'dart:math';
+
 /// list
 extension ReadableListX<T> on List<T> {
 //   /// returns the list `length`
@@ -24,6 +25,8 @@ extension ReadableListX<T> on List<T> {
 //       action(item);
 //     }
 //   }
+  /// return a list without duplicate elements
+  List<T> get removeDuplicated => toSet().toList();
 
   /// return a random element from list
   T get random => this[Random().nextInt(length)];
