@@ -30,4 +30,11 @@ extension ReadableListX<T> on List<T> {
 
   /// return a random element from list
   T get random => this[Random().nextInt(length)];
+
+  ///  return first element if list is not empty
+  ///  else return the default value
+
+  T firstOr(T value) {
+    return isEmpty ? value : first;
+  }
 }

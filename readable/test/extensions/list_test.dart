@@ -9,7 +9,20 @@ void main() {
       items.contains(items.random),
       isTrue,
     );
+  });
 
+  test('it return first element or return default value ', () {
+    expect(
+      [].firstOr(5),
+      equals(5),
+      reason: "List is empity",
+    );
+
+    expect(
+      [1, 5, 3].firstOr(5),
+      equals(1),
+      reason: "List is not empiy",
+    );
   });
   test("it remove duplicate elements", () {
     expect(
@@ -22,6 +35,5 @@ void main() {
       equals([5, 7, 6]),
       reason: "function remove duplicates elements",
     );
-
   });
 }
