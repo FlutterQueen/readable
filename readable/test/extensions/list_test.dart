@@ -9,6 +9,7 @@ void main() {
       items.contains(items.random),
       isTrue,
     );
+
   });
   test("it remove duplicate elements", () {
     expect(
@@ -21,5 +22,6 @@ void main() {
       equals([5, 7, 6]),
       reason: "function remove duplicates elements",
     );
+
   });
 }
