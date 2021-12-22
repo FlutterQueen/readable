@@ -24,4 +24,16 @@ void main() {
       reason: "List is not empiy",
     );
   });
+  test("it remove duplicate elements", () {
+    expect(
+      [].removeDuplicated,
+      isEmpty,
+      reason: "list is Empty",
+    );
+    expect(
+      [5, 7, 6, 7, 5].removeDuplicated,
+      equals([5, 7, 6]),
+      reason: "function remove duplicates elements",
+    );
+  });
 }
