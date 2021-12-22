@@ -1,7 +1,7 @@
 // import 'dart:async';
-// import 'dart:math';
-
-// extension ReadableListX<T> on List<T> {
+import 'dart:math';
+/// list
+extension ReadableListX<T> on List<T> {
 //   /// returns the list `length`
 //   int count() => length;
 
@@ -25,6 +25,6 @@
 //     }
 //   }
 
-//   // return random element
-//   T get random => this[Random().nextInt(length)];
-// }
+  /// return a random element from list
+  T get random => this[Random().nextInt(length)];
+}
