@@ -3,12 +3,12 @@ on:
   push:
     branches: [master]
     paths:
-      - "flutter_readable/**"
+      - "readable/**"
       - ".github/workflows/readable.yml"
   pull_request:
     branches: [master]
     paths:
-      - "flutter_readable/**"
+      - "readable/**"
       - ".github/workflows/readable.yml"
 jobs:
   test:
