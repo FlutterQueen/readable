@@ -6,6 +6,6 @@ extension StringReadableX on String {
   /// Checks if string is Palindrom.
   bool get isPalindrom => reversed == this;
 
-  ///Reverse a String
+  ///Reverse a string
   String get reversed => split('').reversed.join();
 }
