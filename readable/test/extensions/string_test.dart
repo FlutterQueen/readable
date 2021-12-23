@@ -54,6 +54,8 @@ void main() {
           expect(dateTimeTest, DateTime.now().year);
           expect("".toDateOr(DateTime(2000)), DateTime(2000));
           expect("".toDateOr(DateTime(2000, 12)), DateTime(2000, 12));
+          expect(
+              "2021-12-23 21:59".toDateOrThrow, DateTime(2021, 12, 23, 21, 59));
         },
       );
     },
