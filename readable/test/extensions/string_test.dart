@@ -29,32 +29,44 @@ void main() {
     'isPalindrom',
     () {
       test(
+        'reverse a String',
+        () {
+          expect(
+            ''.reversed,
+            '',
+            reason: 'because the string is Empty',
+          );
+          expect('dart'.reversed, 'trad');
+          expect('queen'.reversed, 'neeuq');
+        },
+      );
+      test(
         "Checks if string is Palindrom.",
         () {
           expect(
             ''.isPalindrom,
-            true,
+            isTrue,
             reason: 'because the string is Empty',
           );
           expect(
             'readableelbadaer'.isPalindrom,
-            true,
+            isTrue,
           );
           expect(
             'falah'.isPalindrom,
-            false,
+            isFalse,
           );
           expect(
             'flutterrettulf'.isPalindrom,
-            true,
+            isTrue,
           );
           expect(
             '20011002'.isPalindrom,
-            true,
+            isTrue,
           );
           expect(
             '20011002-'.isPalindrom,
-            false,
+            isFalse,
           );
         },
       );
