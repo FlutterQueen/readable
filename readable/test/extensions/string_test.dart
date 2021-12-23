@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group(
-    "toChars",
+    "convert to another type methods",
     () {
       test(
         'it return a List of Chars from String',
@@ -21,6 +21,36 @@ void main() {
             [],
             reason: "because the List is Empty",
           );
+        },
+      );
+      test(
+        'convert String to int if is possible',
+        () {
+          expect('queen'.toIntOrNull(), null);
+          expect(''.toIntOrNull(), null);
+          expect('20'.toIntOrNull(), 20);
+          expect('or'.toIntOr(5), 5);
+          expect('-10'.toIntOrThrow, -10);
+        },
+      );
+      test(
+        'convert String to double if is possible',
+        () {
+          expect('queen'.toDoubleOrNull(), null);
+          expect(''.toDoubleOrNull(), null);
+          expect('20'.toDoubleOrNull(), 20.0);
+          expect('or'.toDoubleOr(5), 5.0);
+          expect('10'.toDoubleOrThrow, 10.0);
+        },
+      );
+      test(
+        'convert String to dateTime if is possible',
+        () {
+          expect('queen'.toDateOrNull(), null);
+          expect(''.toDateOrNull(), null);
+          expect('now'.toDateOrNow(), DateTime.now());
+          expect('or'.toDateOr(DateTime.now()), DateTime.now());
+          expect(DateTime.now().toString().toDateTimeOrThrow, DateTime.now());
         },
       );
     },
