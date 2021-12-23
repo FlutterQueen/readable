@@ -1,4 +1,4 @@
-import 'package:readable/src/extensions/string/string.dart';
+import 'package:readable/readable.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -30,7 +30,7 @@ void main() {
           expect(''.toIntOrNull(), null);
           expect('20'.toIntOrNull(), 20);
           expect('or'.toIntOr(5), 5);
-          expect('-10'.toIntOrThrow, -10);
+          expect('-10'.toInt(), -10);
         },
       );
       test(
@@ -39,8 +39,8 @@ void main() {
           expect('queen'.toDoubleOrNull(), null);
           expect(''.toDoubleOrNull(), null);
           expect('20'.toDoubleOrNull(), 20.0);
-          expect('5.0'.toDoubleOrThrow, 5.0);
-          expect('10'.toDoubleOrThrow, 10.0);
+          expect('5.0'.toDouble(), 5.0);
+          expect('10'.toDouble(), 10.0);
           expect(''.toDoubleOr(12), 12.0);
         },
       );
@@ -57,7 +57,7 @@ void main() {
           expect("".toDateOr(DateTime(2000)), DateTime(2000));
           expect("".toDateOr(DateTime(2000, 12)), DateTime(2000, 12));
           expect(
-            "2021-12-23 21:59".toDateOrThrow,
+            "2021-12-23 21:59".toDate(),
             DateTime(2021, 12, 23, 21, 59),
           );
         },

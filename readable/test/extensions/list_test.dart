@@ -27,12 +27,12 @@ void main() {
   });
   test("it remove duplicate elements", () {
     expect(
-      [].removeDuplicated,
+      [].withoutDuplicate(),
       isEmpty,
       reason: "list is Empty",
     );
     expect(
-      [5, 7, 6, 7, 5].removeDuplicated,
+      [5, 7, 6, 7, 5].withoutDuplicate(),
       equals([5, 7, 6]),
       reason: "function remove duplicates elements",
     );
@@ -48,19 +48,6 @@ void main() {
       expect([1].count(), 1);
       expect([1, 23, 4, 56].count(), 4);
       expect([1, 2, 3, 4, 5, 6, 7, 8].count(), 8);
-    },
-  );
-  test(
-    'unique',
-    () {
-      expect(
-        [].unique(),
-        [],
-        reason: "list is Empty",
-      );
-      expect([1].unique(), [1]);
-      expect([1, 1, 1, 2].unique(), [1, 2]);
-      expect([1, 2, 3, 4, 5, 6, 6, 7, 8].unique(), [1, 2, 3, 4, 5, 6, 7, 8]);
     },
   );
   test(

@@ -1,6 +1,6 @@
 /// list readableX
 extension ReadableNumListX on List<num> {
-  /// return list summation
+  /// * return list summation
   num sum() {
     num sum = 0;
     for (final n in this) {
@@ -9,74 +9,78 @@ extension ReadableNumListX on List<num> {
     return sum;
   }
 
-  /// return the average of the list if list empty return zero.
-  num averageOrZero() => isEmpty ? 0 : _average();
+  /// * return list average
+  num average() => sum() / length;
 
-  /// return the average of the list if list empty return zero.
-  num? averageOrNull() => isEmpty ? null : _average();
+  /// * return list average
+  /// * if list is empty will return the value
+  num averageOr(num value) => averageOrNull() ?? value;
 
-  ///return the average of the list if list empty throw  StateError.
+  /// *  return the average of the list if list empty return zero.
+  num averageOrZero() => averageOrNull() ?? 0;
+
+  /// * return the average of the list if list empty return zero.
+  num? averageOrNull() => isEmpty ? null : average();
+
+  /// * return the average of the list
+  /// ! if list empty throw `StateError`
   num averageOrThrow() {
-    try {
-      return _average();
-    } catch (e) {
-      throw StateError;
+    if (isEmpty) {
+      throw StateError('list is empty');
     }
+    return average();
   }
 
-  /// Returns the maximum value in the list if list empty return zero.
-  num maxOrZero() => isEmpty ? 0 : _getMax();
-
-  /// Returns the maximum value in the list if list empty return Null.
-  num? maxOrNull() => isEmpty ? null : _getMax();
-
-  ///Returns the maximum value in the list if list empty throw  StateError.
-  num maxOrThrow() {
-    try {
-      return _getMax();
-    } catch (e) {
-      throw StateError;
-    }
-  }
-
-  /// Returns the minimum value in the list if list empty return zero.
-  num minOrZero() => isEmpty ? 0 : _getMin();
-
-  /// Returns the minimum value in the list if list empty return Null.
-
-  num? minOrNull() => isEmpty ? null : _getMin();
-
-  ///Returns the minimum value in the list if list empty throw  StateError.
-  num minOrThrow() {
-    try {
-      return _getMin();
-    } catch (e) {
-      throw StateError;
-    }
-  }
-
-  /// This is here to for the 'DRY'
-  num _average() => sum() / length;
-
-  /// This is here to for the 'DRY'
-  num _getMax() {
+  /// * Max value of the list
+  num max() {
     num max = first;
     for (final n in this) {
-      if (n > max) {
-        max = n;
-      }
+      if (n > max) max = n;
     }
     return max;
   }
 
-  /// This is here to for the 'DRY'
-  num _getMin() {
+  /// Returns the maximum value in the list if list empty return zero.
+  num maxOrZero() => maxOrNull() ?? 0;
+
+  /// Returns the maximum value in the list if list empty return value.
+  num maxOr(num value) => maxOrNull() ?? value;
+
+  /// Returns the maximum value in the list if list empty return Null.
+  num? maxOrNull() => isEmpty ? null : max();
+
+  ///Returns the maximum value in the list if list empty throw  StateError.
+  num maxOrThrow() {
+    if (isEmpty) {
+      throw StateError('list is empty');
+    }
+    return max();
+  }
+
+  /// Min value of the list
+  num min() {
     num min = first;
     for (final n in this) {
-      if (n < min) {
-        min = n;
-      }
+      if (n < min) min = n;
     }
     return min;
+  }
+
+  /// Returns the minimum value in the list if list empty return zero.
+  num minOrZero() => minOrNull() ?? 0;
+
+  /// Returns the minimum value in the list if list empty return value.
+  num minOr(num value) => minOrNull() ?? value;
+
+  /// Returns the minimum value in the list if list empty return Null.
+
+  num? minOrNull() => isEmpty ? null : min();
+
+  ///Returns the minimum value in the list if list empty throw  StateError.
+  num minOrThrow() {
+    if (isEmpty) {
+      throw StateError('list is empty');
+    }
+    return min();
   }
 }
