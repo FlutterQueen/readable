@@ -16,13 +16,13 @@ void main() {
     expect(
       [].firstOr(5),
       equals(5),
-      reason: "List is empity",
+      reason: "List is empty",
     );
 
     expect(
       [1, 5, 3].firstOr(5),
       equals(1),
-      reason: "List is not empiy",
+      reason: "List is not empty",
     );
   });
   test("it remove duplicate elements", () {
@@ -98,6 +98,11 @@ void main() {
             0,
             reason: "list is Empty",
           );
+          expect(
+            <num>[].averageOrNull(),
+            null,
+            reason: "list is Empty",
+          );
           expect([1, 1, 1, 1].averageOrZero(), 1);
           expect([5, 4, 6, 6, 9].averageOrThrow(), 6);
         },
@@ -111,8 +116,8 @@ void main() {
             reason: "list is Empty",
           );
           expect(
-            <num>[].maxOrZero(),
-            0,
+            <num>[].maxOrNull(),
+            null,
             reason: "list is Empty",
           );
           expect([1, 6, 1, 1].maxOrZero(), 6);
@@ -126,6 +131,11 @@ void main() {
           expect(
             <num>[].minOrZero(),
             0,
+            reason: "list is Empty",
+          );
+          expect(
+            <num>[].minOrNull(),
+            null,
             reason: "list is Empty",
           );
 

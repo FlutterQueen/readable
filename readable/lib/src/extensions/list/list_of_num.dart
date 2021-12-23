@@ -11,7 +11,10 @@ extension ReadableNumListX on List<num> {
 
   /// return the average of the list if list empty return zero.
   num averageOrZero() => isEmpty ? 0 : _average();
-  // num averageOrZero() => isEmpty ? 0 : _average();
+
+  /// return the average of the list if list empty return zero.
+  num? averageOrNull() => isEmpty ? null : _average();
+
   ///return the average of the list if list empty throw  StateError.
   num averageOrThrow() {
     try {
@@ -24,6 +27,9 @@ extension ReadableNumListX on List<num> {
   /// Returns the maximum value in the list if list empty return zero.
   num maxOrZero() => isEmpty ? 0 : _getMax();
 
+  /// Returns the maximum value in the list if list empty return Null.
+  num? maxOrNull() => isEmpty ? null : _getMax();
+
   ///Returns the maximum value in the list if list empty throw  StateError.
   num maxOrThrow() {
     try {
@@ -35,6 +41,10 @@ extension ReadableNumListX on List<num> {
 
   /// Returns the minimum value in the list if list empty return zero.
   num minOrZero() => isEmpty ? 0 : _getMin();
+
+  /// Returns the minimum value in the list if list empty return Null.
+
+  num? minOrNull() => isEmpty ? null : _getMin();
 
   ///Returns the minimum value in the list if list empty throw  StateError.
   num minOrThrow() {
