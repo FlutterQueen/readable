@@ -50,7 +50,6 @@ void main() {
           expect(''.toDateOrNull(), null);
           expect('now'.toDateOrNow(), DateTime.now());
           expect('or'.toDateOr(DateTime.now()), DateTime.now());
-          expect(DateTime.now().toString().toDateTimeOrThrow, DateTime.now());
         },
       );
     },
