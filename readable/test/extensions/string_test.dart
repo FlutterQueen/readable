@@ -49,7 +49,7 @@ void main() {
           expect('queen'.toDateOrNull(), null);
           expect(''.toDateOrNull(), null);
           expect('now'.toDateOrNow(), DateTime.now());
-          expect('or'.toDateOr(DateTime.now()), DateTime.now());
+          expect('Or'.toDateOr(DateTime.now()), DateTime.now());
         },
       );
     },
