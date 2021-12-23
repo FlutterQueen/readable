@@ -61,8 +61,8 @@ extension StringReadableX on String {
     }
   }
 
-  /// Checks if string is Palindrom.
-  bool get isPalindrom => reversed == this;
+  /// Checks if string is Palindrome.
+  bool get isPalindrome => reversed == this;
 
   ///Reverse a string
   String get reversed => split('').reversed.join();

@@ -50,18 +50,22 @@ void main() {
           final dateTimeTest = 'or'.toDateOrNow().year;
           expect('queen'.toDateOrNull(), null);
           expect(''.toDateOrNull(), null);
-          expect('now'.toDateOrNow(), DateTime.now());
+
+          expect('now'.toDateOrNow().difference(DateTime.now()).inSeconds, 0);
+
           expect(dateTimeTest, DateTime.now().year);
           expect("".toDateOr(DateTime(2000)), DateTime(2000));
           expect("".toDateOr(DateTime(2000, 12)), DateTime(2000, 12));
           expect(
-              "2021-12-23 21:59".toDateOrThrow, DateTime(2021, 12, 23, 21, 59));
+            "2021-12-23 21:59".toDateOrThrow,
+            DateTime(2021, 12, 23, 21, 59),
+          );
         },
       );
     },
   );
   group(
-    'isPalindrom',
+    'isPalindrome',
     () {
       test(
         'reverse a String',
@@ -76,31 +80,31 @@ void main() {
         },
       );
       test(
-        "Checks if string is Palindrom.",
+        "Checks if string is isPalindrome.",
         () {
           expect(
-            ''.isPalindrom,
+            ''.isPalindrome,
             isTrue,
             reason: 'because the string is Empty',
           );
           expect(
-            'readableelbadaer'.isPalindrom,
+            'readableelbadaer'.isPalindrome,
             isTrue,
           );
           expect(
-            'falah'.isPalindrom,
+            'falah'.isPalindrome,
             isFalse,
           );
           expect(
-            'flutterrettulf'.isPalindrom,
+            'flutterrettulf'.isPalindrome,
             isTrue,
           );
           expect(
-            '20011002'.isPalindrom,
+            '20011002'.isPalindrome,
             isTrue,
           );
           expect(
-            '20011002-'.isPalindrom,
+            '20011002-'.isPalindrome,
             isFalse,
           );
         },
