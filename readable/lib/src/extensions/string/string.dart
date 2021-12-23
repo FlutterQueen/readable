@@ -53,7 +53,7 @@ extension StringReadableX on String {
 
   /// convert String to DateTime if is possible
   /// else will throw FormatException
-  DateTime get toDateTimeOrThrow {
+  DateTime get toDateOrThrow {
     try {
       return DateTime.parse(this);
     } catch (e) {

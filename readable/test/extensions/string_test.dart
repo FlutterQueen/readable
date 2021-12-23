@@ -39,17 +39,21 @@ void main() {
           expect('queen'.toDoubleOrNull(), null);
           expect(''.toDoubleOrNull(), null);
           expect('20'.toDoubleOrNull(), 20.0);
-          expect('or'.toDoubleOr(5), 5.0);
+          expect('5.0'.toDoubleOrThrow, 5.0);
           expect('10'.toDoubleOrThrow, 10.0);
+          expect(''.toDoubleOr(12), 12.0);
         },
       );
       test(
         'convert String to dateTime if is possible',
         () {
+          final dateTimeTest = 'or'.toDateOrNow().year;
           expect('queen'.toDateOrNull(), null);
           expect(''.toDateOrNull(), null);
           expect('now'.toDateOrNow(), DateTime.now());
-          expect('Or'.toDateOr(DateTime.now()), DateTime.now());
+          expect(dateTimeTest, DateTime.now().year);
+          expect("".toDateOr(DateTime(2000)), DateTime(2000));
+          expect("".toDateOr(DateTime(2000, 12)), DateTime(2000, 12));
         },
       );
     },
