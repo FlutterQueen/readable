@@ -35,4 +35,26 @@ extension MapExt<K, V> on Map<K, V> {
     });
     return flippedMap;
   }
+
+  /// return the map without some keys
+  Map<K, V> exceptNull() {
+    final holder = Map<K, V>.of(this);
+    holder.removeWhere((key, value) => value == null);
+    return holder;
+  }
+
+  /// return the map without some keys
+  Map<K, V?> exceptNullAndEmpty() {
+    final holder = Map<K, V?>.of(this);
+    holder.removeWhere(
+        (key, value) => value == null || value is String && value.isEmpty);
+    return holder;
+  }
+
+  /// return the map without some keys
+  Map<K, V?> exceptEmpty() {
+    final holder = Map<K, V?>.of(this);
+    holder.removeWhere((key, value) => value is String && value.isEmpty);
+    return holder;
+  }
 }
