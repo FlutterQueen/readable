@@ -81,4 +81,14 @@ extension ReadableListX<T> on List<T> {
     }
     return result;
   }
+
+  ///The take method returns a new collection with the specified number of items
+  List<T> take(int value) {
+    return sublist(value);
+  }
+
+  ///
+  List<T> takeUntil(bool Function(T e) test) {
+    return where(test).toList();
+  }
 }

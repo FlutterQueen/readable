@@ -133,4 +133,40 @@ void main() {
       );
     },
   );
+  test(
+    'The take method',
+    () {
+      expect(
+        [].take(1),
+        [],
+        reason: "list is Empty",
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].take(3),
+        [1, 2, 3],
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].take(1),
+        [1],
+      );
+    },
+  );
+  test(
+    'The takeUntil method',
+    () {
+      expect(
+        [].takeUntil((e) => false),
+        [],
+        reason: "list is Empty",
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].takeUntil((e) => e % 2 == 0),
+        [2, 4, 6],
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].takeUntil((e) => true),
+        [1, 2, 3, 4, 5, 6],
+      );
+    },
+  );
 }

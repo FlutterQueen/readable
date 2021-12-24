@@ -26,4 +26,13 @@ extension MapExt<K, V> on Map<K, V> {
     keys.forEach(holder.remove);
     return holder;
   }
+
+  ///swaps the collection's keys with their corresponding values
+  Map<V, K> flip() {
+    final Map<V, K> flippedMap = {};
+    forEach((key, value) {
+      flippedMap[value] = key;
+    });
+    return flippedMap;
+  }
 }
