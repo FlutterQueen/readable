@@ -222,7 +222,7 @@ void main() {
         [2, 4, 6],
       );
       expect(
-        [1, 2, 3, 4, 5, 6].takeUntil((e) => false),
+        [1, 2, 3, 4, 5, 6].takeUntil((e) => true),
         [1, 2, 3, 4, 5, 6],
       );
     },
