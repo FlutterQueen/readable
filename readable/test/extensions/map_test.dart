@@ -17,7 +17,136 @@ void main() {
 
     expect(holder.only(['email', 'password']), hold);
   });
-  test('return this keys', () {
+  test('return null values ', () {
+    final mapWithNull = {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+      'password': null,
+    };
+
+    final map = {
+      'email': 'hazem@gmail.com',
+      'password': '123456',
+    };
+
+    expect(mapWithNull.whereNull(), {
+      'password': null,
+    });
+    expect(
+      {}.whereNull(),
+      {},
+    );
+    expect(
+      map.whereNull(),
+      {},
+    );
+  });
+  test('return the map without some keys', () {
+    final mapWithNull = {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+      'password': null,
+    };
+
+    final map = {
+      'email': 'hazem@gmail.com',
+      'password': '123456',
+    };
+
+    expect(mapWithNull.expect(['password']), {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+    });
+    expect(
+      {}.expect(['']),
+      {},
+    );
+    expect(
+      map.expect(['dart']),
+      map,
+    );
+  });
+  test('return the map without some keys null', () {
+    final mapWithNull = {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+      'password': null,
+    };
+
+    final map = {
+      'email': 'hazem@gmail.com',
+      'password': '123456',
+    };
+
+    expect(mapWithNull.exceptNull(), {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+    });
+    expect(
+      {}.exceptNull(),
+      {},
+    );
+    expect(
+      map.exceptNull(),
+      map,
+    );
+  });
+  test('exceptNullAndEmpty', () {
+    final mapWithNull = {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+      'password': null,
+    };
+
+    final map = {
+      'email': 'hazem@gmail.com',
+      'password': '',
+    };
+
+    expect(mapWithNull.exceptNullAndEmpty(), {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+    });
+    expect(
+      {}.exceptNullAndEmpty(),
+      {},
+    );
+    expect(
+      map.exceptNullAndEmpty(),
+      {
+        'email': 'hazem@gmail.com',
+      },
+    );
+  });
+  test('exceptEmpty', () {
+    final mapWithNull = {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+      'password': '',
+    };
+
+    final map = {
+      'email': 'hazem@gmail.com',
+      'password': '',
+    };
+
+    expect(mapWithNull.exceptEmpty(), {
+      'email': 'hazem@gmail.com',
+      'phone': '0123456789',
+    });
+    expect(
+      {}.exceptEmpty(),
+      {},
+    );
+    expect(
+      map.exceptEmpty(),
+      {
+        'email': 'hazem@gmail.com',
+      },
+    );
+  });
+
+  test('swaps the collections keys with their corresponding values', () {
     final map = {
       'email': 'hazem@gmail.com',
       'phone': '0123456789',

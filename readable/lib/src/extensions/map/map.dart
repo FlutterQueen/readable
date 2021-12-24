@@ -1,10 +1,10 @@
 ///
 extension MapExt<K, V> on Map<K, V> {
-  /// return null values from the list
+  /// return null values from the map
   Map<K, V> whereNull() {
     final map = <K, V>{};
     for (final entry in entries) {
-      if (entry.value != null) {
+      if (entry.value == null) {
         map[entry.key] = entry.value;
       }
     }
