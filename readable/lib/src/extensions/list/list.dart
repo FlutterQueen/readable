@@ -3,6 +3,7 @@ import 'dart:math';
 
 /// list
 extension ReadableListX<T> on List<T> {
+  /// alias for `.length`
   /// returns the list `length`
   int count() => length;
 
