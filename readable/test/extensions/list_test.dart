@@ -90,8 +90,15 @@ void main() {
             null,
             reason: "list is Empty",
           );
+          expect(
+            <num>[].averageOr(6),
+            6,
+            reason: "list is Empty",
+          );
           expect([1, 1, 1, 1].averageOrZero(), 1);
           expect([5, 4, 6, 6, 9].averageOrThrow(), 6);
+          expect([5, 4, 6, 6, 9].averageOrNull(), 6);
+          expect([5, 4, 6, 6, 9].average(), 6);
         },
       );
       test(
@@ -107,8 +114,15 @@ void main() {
             null,
             reason: "list is Empty",
           );
+          expect(
+            <num>[].maxOr(2001),
+            2001,
+            reason: "list is Empty",
+          );
           expect([1, 6, 1, 1].maxOrZero(), 6);
+          expect([1, 6, 1, 1].max(), 6);
           expect([5, 4, 6, 6, 9].maxOrThrow(), 9);
+          expect([5, 4, 6, 6, 9].maxOr(3), 9);
           expect([-5, -4, -6, -6, -9].maxOrZero(), -4);
         },
       );
@@ -125,12 +139,135 @@ void main() {
             null,
             reason: "list is Empty",
           );
+          expect(
+            <num>[].minOr(1),
+            1,
+            reason: "list is Empty",
+          );
 
           expect([1, 6, 1, 1].minOrZero(), 1);
           expect([5, 4, 6, 6, 9].minOrThrow(), 4);
-          expect([-5, -4, -6, -6, -9].minOrThrow(), -9);
+          expect([5, 1, 6, 6, 9].minOrThrow(), 1);
+          expect([5, 4, 6, 6, 9].min(), 4);
+          expect([-5, -4, -6, -6, -9].minOrNull(), -9);
+          expect([-5, -4, -6, -6, -9].minOr(3), -9);
+          expect([-5, -4, -6, -6, -9].minOr(-9), -9);
         },
       );
+    },
+  );
+  test(
+    'The take method',
+    () {
+      expect(
+        [].take(1),
+        [],
+        reason: "list is Empty",
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].take(3),
+        [1, 2, 3],
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].take(1),
+        [1],
+      );
+    },
+  );
+  test(
+    'The random method',
+    () {
+      expect(
+        [5].random,
+        5,
+      );
+      expect(
+        [4].random,
+        4,
+      );
+    },
+  );
+  test(
+    'The takeUntil method',
+    () {
+      expect(
+        [].takeUntil((e) => false),
+        [],
+        reason: "list is Empty",
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].takeUntil((e) => e % 2 == 0),
+        [2, 4, 6],
+      );
+      expect(
+        [1, 2, 3, 4, 5, 6].takeUntil((e) => false),
+        [1, 2, 3, 4, 5, 6],
+      );
+    },
+  );
+  test(
+    'The first & last & at methods',
+    () {
+      expect(
+        [].firstOr(3),
+        3,
+        reason: "list is Empty",
+      );
+      expect(
+        [].firstOrNull(),
+        null,
+        reason: "list is Empty",
+      );
+      expect([1, 2, 3, 4, 5, 6].firstOr(5), 1);
+      expect(
+        [1, 2, 3, 4, 5, 6].firstOrNull(),
+        1,
+      );
+      expect(
+        [].lastOr(3),
+        3,
+        reason: "list is Empty",
+      );
+      expect(
+        [].lastOrNull(),
+        null,
+        reason: "list is Empty",
+      );
+      expect([1, 2, 3, 4, 5, 6].lastOr(5), 6);
+      expect(
+        [1, 2, 3, 4, 5].lastOrNull(),
+        5,
+      );
+      expect(
+        [].atOr(5, 3),
+        3,
+        reason: "list is Empty",
+      );
+      expect(
+        [].atOrNull(5),
+        null,
+        reason: "list is Empty",
+      );
+      expect([1, 2, 3, 4, 5, 6].atOr(5, 3), 6);
+      expect(
+        [1, 2, 3, 4, 5].atOrNull(2),
+        3,
+      );
+    },
+  );
+  test(
+    "where methods",
+    () {
+      expect([].firstWhereOrNull((element) => element == 5), null);
+      expect([5, 4, 6].firstWhereOrNull((element) => element == 5), 5);
+    },
+  );
+  test(
+    "map with index methods",
+    () {
+      expect([].mapWithIndex((index, e) => null), []);
+      expect([5, 4, 6].mapWithIndex((index, e) => index), [0, 1, 2]);
+      expect([5, 4, 6].mapWithIndex((index, e) => index * 2), [0, 2, 4]);
     },
   );
 }
