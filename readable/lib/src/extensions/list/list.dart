@@ -87,8 +87,9 @@ extension ReadableListX<T> on List<T> {
     return sublist(value);
   }
 
-  ///
+  ///The takeUntil method returns items in the collection until the given callback returns true:
   List<T> takeUntil(bool Function(T e) test) {
-    return where(test).toList();
+    final list = where(test).toList();
+    return list.isEmpty ? this : list;
   }
 }
