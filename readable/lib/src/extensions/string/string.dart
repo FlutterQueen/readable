@@ -23,4 +23,7 @@ extension StringReadableX on String {
     if (isEmpty) return this;
     return split(' ').map((value) => value.capitalizeFirst).join(' ');
   }
+
+  /// return string lines count
+  int get linesCount => split('\n').length;
 }
