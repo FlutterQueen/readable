@@ -51,6 +51,19 @@ void main() {
     },
   );
   test(
+    'countWithoutNull',
+    () {
+      expect(
+        [].countWithoutNull(),
+        0,
+        reason: "list is Empty",
+      );
+      expect([1].countWithoutNull(), 1);
+      expect([1, 23, null, 56].countWithoutNull(), 3);
+      expect([1, 2, 3, null, 5, null, 7, 8].countWithoutNull(), 6);
+    },
+  );
+  test(
     'loop',
     () async {
       int count = 0;
@@ -75,6 +88,7 @@ void main() {
           expect([1, 2, 3, 4].sum(), 10);
           expect([1, 2, 3, 4, 10].sum(), 20);
           expect([1, 2, 3, 4, -10].sum(), 0);
+          expect([1, 2, 3, 4, -20].sum(), -10);
         },
       );
       test(
@@ -96,8 +110,10 @@ void main() {
             reason: "list is Empty",
           );
           expect([1, 1, 1, 1].averageOrZero(), 1);
+          expect([5].averageOrZero(), 5);
           expect([5, 4, 6, 6, 9].averageOrThrow(), 6);
           expect([5, 4, 6, 6, 9].averageOrNull(), 6);
+          expect([5, 4, 6, 6, 9].averageOr(7), 6);
           expect([5, 4, 6, 6, 9].average(), 6);
         },
       );
@@ -107,6 +123,11 @@ void main() {
           expect(
             <num>[].maxOrZero(),
             0,
+            reason: "list is Empty",
+          );
+          expect(
+            <num>[].maxOr(3),
+            3,
             reason: "list is Empty",
           );
           expect(
@@ -120,8 +141,9 @@ void main() {
             reason: "list is Empty",
           );
           expect([1, 6, 1, 1].maxOrZero(), 6);
-          expect([1, 6, 1, 1].max(), 6);
+          expect([6, 6, 6, 6].max(), 6);
           expect([5, 4, 6, 6, 9].maxOrThrow(), 9);
+          expect([5, 4, 6, 6, 9].maxOrNull(), 9);
           expect([5, 4, 6, 6, 9].maxOr(3), 9);
           expect([-5, -4, -6, -6, -9].maxOrZero(), -4);
         },
@@ -256,7 +278,7 @@ void main() {
     },
   );
   test(
-    "where methods",
+    "firstWhereOrNull method",
     () {
       expect([].firstWhereOrNull((element) => element == 5), null);
       expect([5, 4, 6].firstWhereOrNull((element) => element == 5), 5);
