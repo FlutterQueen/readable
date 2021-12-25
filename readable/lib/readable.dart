@@ -1,5 +1,8 @@
 library readable;
 
+/// * bool
+export 'src/extensions/bool.dart';
+
 /// * List
 export 'src/extensions/list/list.dart';
 export 'src/extensions/list/list_of_num.dart';

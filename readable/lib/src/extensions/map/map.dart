@@ -27,7 +27,6 @@ extension MapExt<K, V> on Map<K, V> {
     return holder;
   }
 
-
   ///swaps the collection's keys with their corresponding values
   Map<V, K> flip() {
     final Map<V, K> flippedMap = {};
@@ -35,7 +34,7 @@ extension MapExt<K, V> on Map<K, V> {
       flippedMap[value] = key;
     });
     return flippedMap;
-
+  }
 
   /// return the map without some keys
   Map<K, V> exceptNull() {
@@ -58,6 +57,5 @@ extension MapExt<K, V> on Map<K, V> {
     final holder = Map<K, V?>.of(this);
     holder.removeWhere((key, value) => value is String && value.isEmpty);
     return holder;
-
   }
 }

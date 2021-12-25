@@ -83,12 +83,6 @@ extension ReadableListX<T> on List<T> {
     return result;
   }
 
-  ///The take method returns a new collection with the specified number of items
-  List<T> take(int value) {
-    return sublist(value);
-  }
-
-
   ///The takeUntil method returns items in the collection until the given callback returns true
   ///If callback never returns true, the takeUntil method will return all items in the collection.
 

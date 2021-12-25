@@ -292,4 +292,13 @@ void main() {
       expect([5, 4, 6].mapWithIndex((index, e) => index * 2), [0, 2, 4]);
     },
   );
+  test('averageOrThrow', () {
+    expect(() => <num>[].averageOrThrow(), throwsStateError);
+  });
+  test('maxOrThrow', () {
+    expect(() => <num>[].maxOrThrow(), throwsStateError);
+  });
+  test('minOrThrow', () {
+    expect(() => <num>[].minOrThrow(), throwsStateError);
+  });
 }
