@@ -78,20 +78,6 @@ void main() {
     'list of num',
     () {
       test(
-        ' list summation',
-        () {
-          expect(
-            <num>[].sum(),
-            0,
-            reason: "list is Empty",
-          );
-          expect([1, 2, 3, 4].sum(), 10);
-          expect([1, 2, 3, 4, 10].sum(), 20);
-          expect([1, 2, 3, 4, -10].sum(), 0);
-          expect([1, 2, 3, 4, -20].sum(), -10);
-        },
-      );
-      test(
         'average of the list',
         () {
           expect(

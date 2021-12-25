@@ -1,6 +1,7 @@
 /// list readableX
 extension ReadableNumListX on List<num> {
   /// * return list summation
+  /// * return `0` if list is empty
   num sum() {
     num sum = 0;
     for (final n in this) {
@@ -10,14 +11,21 @@ extension ReadableNumListX on List<num> {
   }
 
   /// * return list average
-  num average() => sum() / length;
+  /// ! throws `StateError` is the list is empty
+  num average() {
+    if (isEmpty) {
+      throw StateError('cant calculate average since the  list is empty');
+    }
+    return sum() / length;
+  }
 
   /// * return list average
   /// * if list is empty will return the value
   num averageOr(num value) => averageOrNull() ?? value;
 
-  /// *  return the average of the list if list empty return zero.
-  num averageOrZero() => averageOrNull() ?? 0;
+  /// * return the average of the list
+  /// * return `0` if list is empty .
+  num averageOrZero() => averageOr(0);
 
   /// * return the average of the list if list empty return zero.
   num? averageOrNull() => isEmpty ? null : average();
