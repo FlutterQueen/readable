@@ -175,6 +175,10 @@ void main() {
         'falah******'.replaceAfter('h', '', 'default'),
         'falah',
       );
+      expect(
+        'falah******'.replaceAfter('n', ''),
+        'falah******',
+      );
     },
   );
   test(
