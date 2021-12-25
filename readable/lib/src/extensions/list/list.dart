@@ -36,11 +36,14 @@ extension ReadableListX<T> on List<T> {
   }
 
   /// return the first element if list is not empty
+  /// else return  null
+
   T? firstOrNull() {
     return isEmpty ? null : first;
   }
 
   /// return the last element if list is not empty
+  /// else return  null
   T? lastOrNull() {
     return isEmpty ? null : last;
   }
@@ -52,7 +55,7 @@ extension ReadableListX<T> on List<T> {
   }
 
   /// return element by index
-  /// if index si out of range will return null
+  /// if index  out of range will return null
   T? atOrNull(int index) {
     return length - 1 >= index ? this[index] : null;
   }

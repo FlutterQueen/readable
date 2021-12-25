@@ -22,6 +22,7 @@ void main() {
         final watch = Stopwatch();
         watch.start();
         await times[sec]!();
+
         watch.stop();
         expect(watch.elapsed.inSeconds, sec);
       }
