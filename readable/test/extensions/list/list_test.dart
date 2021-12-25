@@ -130,7 +130,7 @@ void main() {
       );
     });
     test(
-        'If callback never returns true, the takeUntil method will return all items in the collection.',
+        'If callback never returns  true, the takeUntil method will return all items in the collection.',
         () {
       expect(
         [1, 2, 3, 4, 5, 6].takeUntil((e) => e - 10 == 0),
