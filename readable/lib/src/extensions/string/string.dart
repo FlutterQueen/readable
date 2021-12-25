@@ -1,8 +1,5 @@
 ///
 extension StringReadableX on String {
-  ///Convert  String to List of Characters
-  List<String> toChars() => split('');
-
   /// Checks if string is Palindrome.
   bool get isPalindrome => reversed == this;
 

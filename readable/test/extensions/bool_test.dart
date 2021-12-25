@@ -3,8 +3,15 @@ import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 void main() {
-  test('bool to int', () {
-    expect(true.toInt(), 1);
-    expect(false.toInt(), 0);
-  });
+  group(
+    'toInt function',
+    () {
+      test('convert bool to int if true return 1 else 0', () {
+        expect(true.toInt(), 1);
+      });
+      test('convert bool to int if true return 1 else 0', () {
+        expect(false.toInt(), 0);
+      });
+    },
+  );
 }
