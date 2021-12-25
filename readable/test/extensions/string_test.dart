@@ -29,6 +29,7 @@ void main() {
           expect('queen'.toIntOrNull(), null);
           expect(''.toIntOrNull(), null);
           expect('20'.toIntOrNull(), 20);
+          expect('20'.toIntOr(10), 20);
           expect('or'.toIntOr(5), 5);
           expect('-10'.toInt(), -10);
         },
@@ -42,6 +43,17 @@ void main() {
           expect('5.0'.toDouble(), 5.0);
           expect('10'.toDouble(), 10.0);
           expect(''.toDoubleOr(12), 12.0);
+        },
+      );
+      test(
+        'convert String to num if is possible',
+        () {
+          expect('queen'.toNumOrNull(), null);
+          expect(''.toNumOrNull(), null);
+          expect('20'.toNumOr(10), 20.0);
+          expect('5.0'.toNum(), 5.0);
+          expect('10'.toNum(), 10.0);
+          expect(''.toNumOr(12), 12.0);
         },
       );
       test(
@@ -140,4 +152,87 @@ void main() {
       },
     );
   });
+  test(
+    'lines',
+    () {
+      expect(
+        ''.linesCount,
+        1,
+        reason: 'because the string is Empty',
+      );
+      expect('falah\nhassan'.linesCount, 2);
+    },
+  );
+  test(
+    'replaceAfter',
+    () {
+      expect(
+        ''.replaceAfter('a', 'f', 'default'),
+        'default',
+        reason: 'because the string is Empty',
+      );
+      expect(
+        'falah******'.replaceAfter('h', '', 'default'),
+        'falah',
+      );
+      expect(
+        'falah******'.replaceAfter('n', ''),
+        'falah******',
+      );
+    },
+  );
+  test(
+    'replaceBefore',
+    () {
+      expect(
+        ''.replaceBefore('a', 'f', 'default'),
+        'default',
+        reason: 'because the string is Empty',
+      );
+      expect(
+        'falah******'.replaceBefore('h', '', 'default'),
+        'h******',
+      );
+      expect(
+        'falah******'.replaceBefore('f', '', 'default'),
+        'falah******',
+      );
+    },
+  );
+  test(
+    'anyChar',
+    () {
+      expect(
+        ''.anyChar((element) => element == 'a'),
+        isFalse,
+        reason: 'because the string is Empty',
+      );
+      expect(
+        'falah'.anyChar((element) => element == 'a'),
+        isTrue,
+      );
+      expect(
+        'hassan'.anyChar((element) => element != 'l'),
+        isTrue,
+      );
+    },
+  );
+  test(
+    'last',
+    () {
+      expect(
+        ''.last,
+        '',
+        reason: 'because the string is Empty',
+      );
+      expect(
+        'falah'.last,
+        'h',
+      );
+      expect(
+        'hassan'.last,
+        'n',
+      );
+    },
+  );
 }

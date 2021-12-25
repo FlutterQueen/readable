@@ -48,7 +48,8 @@ extension MapExt<K, V> on Map<K, V> {
   Map<K, V?> exceptNullAndEmpty() {
     final holder = Map<K, V?>.of(this);
     holder.removeWhere(
-        (key, value) => value == null || value is String && value.isEmpty);
+      (key, value) => value == null || value is String && value.isEmpty,
+    );
     return holder;
   }
 
