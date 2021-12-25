@@ -1,6 +1,6 @@
 ///
 extension MapExt<K, V> on Map<K, V> {
-  /// return null values from the map
+  /// return key of null values from the map
   Map<K, V> whereNull() {
     final map = <K, V>{};
     for (final entry in entries) {
