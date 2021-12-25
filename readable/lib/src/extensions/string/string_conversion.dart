@@ -1,5 +1,8 @@
 /// convert string to different types
 extension StringConvertX on String {
+  ///Convert  String to List of Characters
+  List<String> toChars() => split('');
+
   /// convert String to int if is possible
   /// else throw `FormatException`
   int toInt() => int.parse(this);
