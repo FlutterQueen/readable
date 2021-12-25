@@ -101,7 +101,7 @@ void main() {
       expect([1, 2].atOrNull(10), null);
     });
   });
-  group('firstWhereOrNull function', () {
+  group(' firstWhereOrNull function', () {
     test('return the first match', () {
       expect([1, 2, 3, 4, 5].firstWhereOrNull((e) => e % 2 == 0), 2);
     });
