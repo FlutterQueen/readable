@@ -7,10 +7,46 @@ void main() {
     test('it return the sum if list is not empty', () {
       expect(<num>[1, 2, 3, 4, 5].sum(), 15);
     });
-    test('it return the `0` if the list is empty', () {
+    test('it throws StateError if list is empty', () {
       expect(
-        <num>[].sum(),
+        () => <num>[].sum(),
+        throwsStateError,
+        reason: "list is Empty",
+      );
+    });
+  });
+  group('sumOrZero function', () {
+    test('it return the sum if list is not empty', () {
+      expect(<num>[1, 2, 3, 4, 5].sumOrZero(), 15);
+    });
+    test('it return 0 if list is empty', () {
+      expect(
+        <num>[].sumOrZero(),
         0,
+        reason: "list is Empty",
+      );
+    });
+  });
+  group('sumOrNull function', () {
+    test('it return the sum if list is not empty', () {
+      expect(<num>[1, 2, 3, 4, 5].sumOrNull(), 15);
+    });
+    test('it return 0 if list is empty', () {
+      expect(
+        <num>[].sumOrNull(),
+        isNull,
+        reason: "list is Empty",
+      );
+    });
+  });
+  group('sumOr function', () {
+    test('it return the sum if list is not empty', () {
+      expect(<num>[1, 2, 3, 4, 5].sumOr(99), 15);
+    });
+    test('it return 0 if list is empty', () {
+      expect(
+        <num>[].sumOr(99),
+        99,
         reason: "list is Empty",
       );
     });
@@ -49,10 +85,10 @@ void main() {
   });
   group('averageOrThrow function', () {
     test('it return the average if list is not empty', () {
-      expect(<num>[1, 2, 3, 4, 5].averageOrThrow(), 3);
+      expect(<num>[1, 2, 3, 4, 5].average(), 3);
     });
     test('it throwsStateError value if the list is empty', () {
-      expect(() => <num>[].averageOrThrow(), throwsStateError);
+      expect(() => <num>[].average(), throwsStateError);
     });
   });
   group('max function', () {
@@ -89,10 +125,10 @@ void main() {
   });
   group('maxOrThrow function', () {
     test('it return the max if list is not empty', () {
-      expect(<num>[1, 2, 3, 4, 5].maxOrThrow(), 5);
+      expect(<num>[1, 2, 3, 4, 5].max(), 5);
     });
     test('it throwsStateError value if the list is empty', () {
-      expect(() => <num>[].maxOrThrow(), throwsStateError);
+      expect(() => <num>[].max(), throwsStateError);
     });
   });
   group('min function', () {
@@ -130,10 +166,10 @@ void main() {
   });
   group('minOrThrow function', () {
     test('it return the min if list is not empty', () {
-      expect(<num>[1, 2, 3, 4, 5].minOrThrow(), 1);
+      expect(<num>[1, 2, 3, 4, 5].min(), 1);
     });
     test('it throwsStateError value if the list is empty', () {
-      expect(() => <num>[].minOrThrow(), throwsStateError);
+      expect(() => <num>[].min(), throwsStateError);
     });
   });
 }

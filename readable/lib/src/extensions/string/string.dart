@@ -57,8 +57,9 @@ extension StringReadableX on String {
       split('').any((s) => predicate(s));
 
   /// Returns last symbol of string or empty string if `this` is null or empty
-  String get last {
-    if (isEmpty) return '';
-    return this[length - 1];
-  }
+  String get lastOrEmpty => lastOrNull ?? '';
+
+  /// * return the last character
+  /// * return `null` if isEmpty
+  String? get lastOrNull => isEmpty ? null : this[length - 1];
 }

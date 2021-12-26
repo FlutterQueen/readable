@@ -6,7 +6,6 @@ export 'src/extensions/bool.dart';
 /// * List
 export 'src/extensions/list/list.dart';
 export 'src/extensions/list/list_of_num.dart';
-export 'src/extensions/list/of_list.dart';
 
 /// * Map
 export 'src/extensions/map/map.dart';

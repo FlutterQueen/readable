@@ -3,18 +3,22 @@ import 'dart:math';
 
 /// list
 extension ReadableListX<T> on List<T> {
-  /// alias for `.length`
-  /// returns the list `length`
+  /// * alias for `length`
   int count() => length;
 
-  /// return the `length` without null elements
+  /// * return the `length` without `null` elements
   int countWithoutNull() {
+    /// create a new list
     final holder = List.from(this);
+
+    /// remove null elements
     holder.removeWhere((element) => element == null);
-    return holder.length;
+
+    /// return the holder elements count
+    return holder.count();
   }
 
-  /// async for each
+  /// * async for each
   Future<void> loop(
     FutureOr<void> Function(T e) action,
   ) async {
@@ -23,51 +27,41 @@ extension ReadableListX<T> on List<T> {
     }
   }
 
-  /// return a list without duplicate elements
+  /// * return a new `List` without duplicated `elements`
   List<T> withoutDuplicate() => toSet().toList();
 
-  /// return a random element from list
+  /// * return a random element from list
+  /// ! throws `StateError` if list is empty
   T get random => this[Random().nextInt(length)];
 
-  /// return first element if list is not empty
-  /// else return the default value
-  T firstOr(T value) {
-    return firstOrNull() ?? value;
-  }
+  /// * return the first element
+  /// * return `null` if isEmpty
+  T? firstOrNull() => isEmpty ? null : first;
 
-  /// return the first element if list is not empty
-  /// else return  null
+  /// * return first element if list is not empty
+  /// * return `value` if isEmpty
+  T firstOr(T value) => firstOrNull() ?? value;
 
-  T? firstOrNull() {
-    return isEmpty ? null : first;
-  }
+  /// * return the last element
+  /// * return `null` if isEmpty
+  T? lastOrNull() => isEmpty ? null : last;
 
-  /// return the last element if list is not empty
-  /// else return  null
-  T? lastOrNull() {
-    return isEmpty ? null : last;
-  }
+  /// * return the last element
+  /// * return `value` if isEmpty
+  T lastOr(T value) => lastOrNull() ?? value;
 
-  /// return last element if list is not empty
-  /// else return the default value
-  T lastOr(T value) {
-    return lastOrNull() ?? value;
-  }
-
-  /// return element by index
-  /// if index  out of range will return null
+  /// * return element by index
+  /// * return `null` if index out of range
   T? atOrNull(int index) {
     return length - 1 >= index ? this[index] : null;
   }
 
-  /// return element by index
-  /// if index si out of range will return the `value`
-  T atOr(int index, T value) {
-    return length - 1 >= index ? this[index] : value;
-  }
+  /// * return element by index
+  /// * return `value` if index out of range
+  T atOr(int index, T value) => length - 1 >= index ? this[index] : value;
 
-  /// return the first match
-  /// else will return null
+  /// * return the first match
+  /// * return null if there is no match
   T? firstWhereOrNull(bool Function(T e) test) {
     try {
       return firstWhere(test);
@@ -77,11 +71,11 @@ extension ReadableListX<T> on List<T> {
     }
   }
 
-  /// like `map()`  function but now you have the index with the element
-  List<T> mapWithIndex(T Function(int index, T e) test) {
+  /// * like `map()` function but now you have the index with the element
+  List<T> mapWithIndex(T Function(int index, T element) mapper) {
     final result = <T>[];
     for (int i = 0; i < length; i++) {
-      result.add(test(i, this[i]));
+      result.add(mapper(i, this[i]));
     }
     return result;
   }

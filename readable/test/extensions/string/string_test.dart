@@ -92,13 +92,13 @@ void main() {
     test(
       'because the string is Empty',
       () {
-        expect(''.last, '');
+        expect(''.lastOrEmpty, '');
       },
     );
     test(
       'Returns last symbol of string or empty string if `this` is null or empty',
       () {
-        expect('flutter\nDev'.last, 'v');
+        expect('flutter\nDev'.lastOrEmpty, 'v');
       },
     );
   });
