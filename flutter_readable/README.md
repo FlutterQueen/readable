@@ -1,6 +1,6 @@
 # **`Q U E E N 👑`**
 
-<a href="https://pub.dev/packages/readable"><img src="https://img.shields.io/pub/v/readable.svg" alt="Pub"></a>
+<a href="https://pub.dev/packages/flutter_readable"><img src="https://img.shields.io/pub/v/flutter_readable.svg" alt="Pub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 
