@@ -17,6 +17,14 @@ extension QMediaQueryX on BuildContext {
   /// shortcut for `MediaQuery.of(context).padding`
   EdgeInsets get mediaQueryPadding => MediaQuery.of(this).padding;
 
-  /// shortcut for ` MediaQuery.of(context).orientation`
+  /// shortcut for `MediaQuery.of(context).orientation`
   Orientation get orientation => MediaQuery.of(this).orientation;
+
+  /// shortcut for `MediaQuery.of(context).orientation == Orientation.portrait`
+  bool get isPortrait =>
+      MediaQuery.of(this).orientation == Orientation.portrait;
+
+  /// shortcut for `MediaQuery.of(context).orientation == Orientation.landscape`
+  bool get isLandscape =>
+      MediaQuery.of(this).orientation == Orientation.landscape;
 }
