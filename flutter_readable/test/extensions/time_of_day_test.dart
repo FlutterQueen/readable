@@ -34,8 +34,16 @@ void main() {
         isTrue,
       );
       expect(
-        const TimeOfDay(hour: 8, minute: 15).copyWith(hour: 9),
+        const TimeOfDay(hour: 8, minute: 15).copyWith(
+          hour: 9,
+        ),
         after,
+      );
+      expect(
+        const TimeOfDay(hour: 8, minute: 15).copyWith(
+          minute: 9,
+        ),
+        const TimeOfDay(hour: 8, minute: 9),
       );
     },
   );
