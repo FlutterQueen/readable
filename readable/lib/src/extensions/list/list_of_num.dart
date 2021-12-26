@@ -44,18 +44,6 @@ extension ReadableNumListX on List<num> {
   /// ! throws `StateError` if isEmpty
   num average() => averageOrNull() ?? (throw StateError('list is empty'));
 
-  /// * return the element with the max value
-  /// ! throws `StateError` if isEmpty
-  num max() => maxOrNull() ?? (throw StateError('list is empty'));
-
-  /// * return the element with the max value
-  /// * return `value` if isEmpty
-  num maxOr(num value) => maxOrNull() ?? value;
-
-  /// * return the element with the max value
-  /// * return `0` if isEmpty
-  num maxOrZero() => maxOrNull() ?? 0;
-
   /// * return the maximum value in the list
   /// * return `null` if isEmpty
   num? maxOrNull() {
@@ -66,6 +54,18 @@ extension ReadableNumListX on List<num> {
     }
     return max;
   }
+
+  /// * return the element with the max value
+  /// * return `0` if isEmpty
+  num maxOrZero() => maxOrNull() ?? 0;
+
+  /// * return the element with the max value
+  /// * return `value` if isEmpty
+  num maxOr(num value) => maxOrNull() ?? value;
+
+  /// * return the element with the max value
+  /// ! throws `StateError` if isEmpty
+  num max() => maxOrNull() ?? (throw StateError('list is empty'));
 
   /// * return the minimum value in the list
   /// * return `null` if isEmpty
