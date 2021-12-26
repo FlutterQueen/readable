@@ -27,7 +27,7 @@ extension ReadableNumListX on List<num> {
   /// * return `0` if list is empty .
   num averageOrZero() => averageOr(0);
 
-  /// * return the average of the list if list empty return zero.
+  /// * return the average of the list if list empty return null.
   num? averageOrNull() => isEmpty ? null : average();
 
   /// * return the average of the list
