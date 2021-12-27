@@ -139,6 +139,16 @@ class TestXPage extends StatelessWidget {
                       ctx.isLight,
                       Theme.of(ctx).brightness == Brightness.light,
                     ),
+                'isPortrait': (ctx) => identical(
+                      ctx.isPortrait,
+                      MediaQuery.of(context).orientation ==
+                          Orientation.portrait,
+                    ),
+                'isLandscape': (ctx) => identical(
+                      ctx.isLandscape,
+                      MediaQuery.of(context).orientation ==
+                          Orientation.landscape,
+                    ),
               };
               for (final ext in extensions.entries) {
                 final result = ext.value(context);
