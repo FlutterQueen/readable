@@ -102,6 +102,31 @@ class TestXPage extends StatelessWidget {
                       Theme.of(ctx).textTheme.headline6,
                     ),
 
+                'h1': (ctx) => identical(
+                      ctx.h1,
+                      Theme.of(ctx).textTheme.headline1,
+                    ),
+                'h2': (ctx) => identical(
+                      ctx.h2,
+                      Theme.of(ctx).textTheme.headline2,
+                    ),
+                'h3': (ctx) => identical(
+                      ctx.h3,
+                      Theme.of(ctx).textTheme.headline3,
+                    ),
+                'h4': (ctx) => identical(
+                      ctx.h4,
+                      Theme.of(ctx).textTheme.headline4,
+                    ),
+                'h5': (ctx) => identical(
+                      ctx.h5,
+                      Theme.of(ctx).textTheme.headline5,
+                    ),
+                'h6': (ctx) => identical(
+                      ctx.h6,
+                      Theme.of(ctx).textTheme.headline6,
+                    ),
+
                 /// * theme
                 'theme': (ctx) => identical(ctx.theme, Theme.of(ctx)),
                 'textTheme': (ctx) =>
