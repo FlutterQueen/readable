@@ -1,5 +1,9 @@
+// import 'package:readable/src/extensions/iterable/extensions.dart';
+
 /// list `readableX`
 extension ReadableNumListX on Iterable<num> {
+  // int countZeros() => countValue(0);
+
   /// * return list summation
   /// * return `null` if list is empty
   num? sumOrNull() {

@@ -12,11 +12,33 @@ extension ReadAbleIterable<T> on Iterable<T> {
     holder.removeWhere((element) => element == null);
 
     /// return the holder elements count
-    return holder.count();
+    return holder.length;
   }
 
   /// * alias for `length`
-  int count() => length;
+  /// * but can filter before if needed
+  int count([
+    bool Function(T element)? mapper,
+  ]) =>
+      mapper == null ? length : where(mapper).length;
+
+  // int countNull() => count((e) => e == null);
+  // int countEmpty() => count((e) => e is String && e.trim().isEmpty);
+  // int countNotEmpty() => count((e) => e is String && e.trim().isNotEmpty);
+  // int countNotNull() => count((e) => e != null);
+  // int countNotEmptyOrNull() =>
+  //     count((e) => e is String && e.trim().isNotEmpty || e != null);
+  // int countNotEmptyOrNullOrZero() =>
+  //     count((e) => e is String && e.trim().isNotEmpty || e != null || e == 0);
+  // int countNotEmptyOrNullOrZeroOrFalse() => count(
+  //       (e) =>
+  //           e is String && e.trim().isNotEmpty ||
+  //           e != null ||
+  //           e == 0 ||
+  //           e == false,
+  //     );
+
+  // int countValue(T value) => count((e) => e == value);
 
   /// * async for each
   Future<void> loop(
