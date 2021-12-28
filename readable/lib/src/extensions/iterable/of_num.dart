@@ -1,5 +1,5 @@
 /// list `readableX`
-extension ReadableNumListX on List<num> {
+extension ReadableNumListX on Iterable<num> {
   /// * return list summation
   /// * return `null` if list is empty
   num? sumOrNull() {

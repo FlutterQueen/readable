@@ -76,22 +76,31 @@ void main() {
 
   group('mergeTwoMaps', () {
     test('it will merge two simple maps', () {
-      final result = mergeTwoMaps({'foo': 'bar'}, {'zee': 'xyz'});
-      expect(result, {'foo': 'bar', 'zee': 'xyz'});
+      final result = mergeTwoMaps(
+        {'foo': 'bar'},
+        {'zee': 'xyz'},
+      );
+      expect(result, {
+        'foo': 'bar',
+        'zee': 'xyz',
+      });
     });
     test('it will merge two nested maps', () {
-      final result = mergeTwoMaps({
-        'foo': 'bar',
-        'zee': {
-          'abc': 'abc',
-          'xyz': 'xyz',
+      final result = mergeTwoMaps(
+        {
+          'foo': 'bar',
+          'zee': {
+            'abc': 'abc',
+            'xyz': 'xyz',
+          },
         },
-      }, {
-        'zee': {
-          'efg': 'efg',
-          '123': '123',
+        {
+          'zee': {
+            'efg': 'efg',
+            '123': '123',
+          },
         },
-      });
+      );
       expect(result, {
         'foo': 'bar',
         'zee': {

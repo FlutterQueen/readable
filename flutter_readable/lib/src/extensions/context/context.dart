@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 extension QXContext on BuildContext {
-  /// *  Overlay shortcuts
-
   /// shortcut for `Overlay.of(context)``
   OverlayState? get overlay => Overlay.of(this);
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_readable/src/extensions/time_of_day.dart';
+import 'package:flutter_readable/flutter_readable.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -10,8 +10,6 @@ void main() {
         hour: 9,
         minute: 15,
       );
-      expect(const TimeOfDay(hour: 13, minute: 10).in12Format, "1:10");
-      expect(const TimeOfDay(hour: 15, minute: 15).in12Format, "3:15");
       expect(const TimeOfDay(hour: 13, minute: 10).isAm, isFalse);
       expect(const TimeOfDay(hour: 8, minute: 15).isAm, isTrue);
       expect(const TimeOfDay(hour: 13, minute: 10).isPm, isTrue);

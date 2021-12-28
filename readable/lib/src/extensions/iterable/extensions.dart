@@ -1,11 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 
-/// list
-extension ReadableListX<T> on List<T> {
-  /// * alias for `length`
-  int count() => length;
-
+///sss
+extension ReadAbleIterable<T> on Iterable<T> {
   /// * return the `length` without `null` elements
   int countWithoutNull() {
     /// create a new list
@@ -17,6 +14,9 @@ extension ReadableListX<T> on List<T> {
     /// return the holder elements count
     return holder.count();
   }
+
+  /// * alias for `length`
+  int count() => length;
 
   /// * async for each
   Future<void> loop(
@@ -32,7 +32,7 @@ extension ReadableListX<T> on List<T> {
 
   /// * return a random element from list
   /// ! throws `StateError` if list is empty
-  T get random => this[Random().nextInt(length)];
+  T get random => elementAt(Random().nextInt(Random().nextInt(length)));
 
   /// * return the first element
   /// * return `null` if isEmpty
@@ -53,12 +53,12 @@ extension ReadableListX<T> on List<T> {
   /// * return element by index
   /// * return `null` if index out of range
   T? atOrNull(int index) {
-    return length - 1 >= index ? this[index] : null;
+    return length - 1 >= index ? elementAt(index) : null;
   }
 
   /// * return element by index
   /// * return `value` if index out of range
-  T atOr(int index, T value) => length - 1 >= index ? this[index] : value;
+  T atOr(int index, T value) => length - 1 >= index ? elementAt(index) : value;
 
   /// * return the first match
   /// * return null if there is no match
@@ -75,7 +75,7 @@ extension ReadableListX<T> on List<T> {
   List<T> mapWithIndex(T Function(int index, T element) mapper) {
     final result = <T>[];
     for (int i = 0; i < length; i++) {
-      result.add(mapper(i, this[i]));
+      result.add(mapper(i, elementAt(i)));
     }
     return result;
   }
@@ -83,7 +83,7 @@ extension ReadableListX<T> on List<T> {
   ///The takeUntil method returns items in the collection until the given callback returns true
   ///If callback never returns true, the takeUntil method will return all items in the collection.
 
-  List<T> takeUntil(bool Function(T e) test) {
+  Iterable<T> takeUntil(bool Function(T e) test) {
     final list = where(test).toList();
     return list.isEmpty ? this : list;
   }

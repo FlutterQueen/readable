@@ -1,4 +1,4 @@
-import 'package:readable/src/extensions/list/list.dart';
+import 'package:readable/readable.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
