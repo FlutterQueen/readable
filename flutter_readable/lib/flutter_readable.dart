@@ -2,6 +2,7 @@ library flutter_readable;
 
 export 'package:readable/readable.dart';
 
+export 'src/extensions/context/colors.dart';
 export 'src/extensions/context/context.dart';
 export 'src/extensions/context/localization.dart';
 export 'src/extensions/context/media_query.dart';
