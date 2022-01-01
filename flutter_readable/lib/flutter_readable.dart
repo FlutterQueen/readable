@@ -10,4 +10,5 @@ export 'src/extensions/context/navigator.dart';
 export 'src/extensions/context/text_theme.dart';
 export 'src/extensions/context/theme.dart';
 export 'src/extensions/date_time.dart';
+export 'src/extensions/locale.dart';
 export 'src/extensions/time_of_day.dart';
