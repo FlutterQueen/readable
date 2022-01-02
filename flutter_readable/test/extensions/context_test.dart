@@ -149,6 +149,92 @@ class TestXPage extends StatelessWidget {
                       MediaQuery.of(context).orientation ==
                           Orientation.landscape,
                     ),
+
+                /// * Color
+                'primaryColor': (ctx) => identical(
+                      ctx.primaryColor,
+                      Theme.of(context).primaryColor,
+                    ),
+                'primaryColorDark': (ctx) => identical(
+                      ctx.primaryColorDark,
+                      Theme.of(context).primaryColorDark,
+                    ),
+                'primaryColorLight': (ctx) => identical(
+                      ctx.primaryColorLight,
+                      Theme.of(context).primaryColorLight,
+                    ),
+                'backgroundColor': (ctx) => identical(
+                      ctx.backgroundColor,
+                      Theme.of(context).backgroundColor,
+                    ),
+                'scaffoldBackgroundColor': (ctx) => identical(
+                      ctx.bottomAppBarColor,
+                      Theme.of(context).bottomAppBarColor,
+                    ),
+                'bottomAppBarColor': (ctx) => identical(
+                      ctx.bottomAppBarColor,
+                      Theme.of(context).bottomAppBarColor,
+                    ),
+                'cardColor': (ctx) => identical(
+                      ctx.cardColor,
+                      Theme.of(context).cardColor,
+                    ),
+                'dividerColor': (ctx) => identical(
+                      ctx.dividerColor,
+                      Theme.of(context).dividerColor,
+                    ),
+                'disabledColor': (ctx) => identical(
+                      ctx.disabledColor,
+                      Theme.of(context).disabledColor,
+                    ),
+                'focusColor': (ctx) => identical(
+                      ctx.focusColor,
+                      Theme.of(context).focusColor,
+                    ),
+                'hoverColor': (ctx) => identical(
+                      ctx.hoverColor,
+                      Theme.of(context).hoverColor,
+                    ),
+                'highlightColor': (ctx) => identical(
+                      ctx.highlightColor,
+                      Theme.of(context).highlightColor,
+                    ),
+                'splashColor': (ctx) => identical(
+                      ctx.splashColor,
+                      Theme.of(context).splashColor,
+                    ),
+                'selectedRowColor': (ctx) => identical(
+                      ctx.selectedRowColor,
+                      Theme.of(context).selectedRowColor,
+                    ),
+                'unselectedWidgetColor': (ctx) => identical(
+                      ctx.unselectedWidgetColor,
+                      Theme.of(context).unselectedWidgetColor,
+                    ),
+                'secondaryHeaderColor': (ctx) => identical(
+                      ctx.secondaryHeaderColor,
+                      Theme.of(context).secondaryHeaderColor,
+                    ),
+                'toggleableActiveColor': (ctx) => identical(
+                      ctx.toggleableActiveColor,
+                      Theme.of(context).toggleableActiveColor,
+                    ),
+                'hintColor': (ctx) => identical(
+                      ctx.hintColor,
+                      Theme.of(context).hintColor,
+                    ),
+                'errorColor': (ctx) => identical(
+                      ctx.errorColor,
+                      Theme.of(context).errorColor,
+                    ),
+                'colorScheme': (ctx) => identical(
+                      ctx.colorScheme,
+                      Theme.of(context).colorScheme,
+                    ),
+                'buttonPrimaryColor': (ctx) => identical(
+                      ctx.buttonPrimaryColor,
+                      Theme.of(context).buttonTheme.colorScheme?.primary,
+                    ),
               };
               for (final ext in extensions.entries) {
                 final result = ext.value(context);
