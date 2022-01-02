@@ -1,6 +1,6 @@
 library flutter_readable;
 
-// export 'package:readable/readable.dart';
+export 'package:readable/readable.dart';
 
 export 'src/extensions/context/colors.dart';
 export 'src/extensions/context/context.dart';
