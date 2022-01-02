@@ -23,23 +23,23 @@ extension ReadAbleIterable<T> on Iterable<T> {
   ]) =>
       mapper == null ? length : where(mapper).length;
 
-  // int countNull() => count((e) => e == null);
-  // int countEmpty() => count((e) => e is String && e.trim().isEmpty);
-  // int countNotEmpty() => count((e) => e is String && e.trim().isNotEmpty);
-  // int countNotNull() => count((e) => e != null);
-  // int countNotEmptyOrNull() =>
-  //     count((e) => e is String && e.trim().isNotEmpty || e != null);
-  // int countNotEmptyOrNullOrZero() =>
-  //     count((e) => e is String && e.trim().isNotEmpty || e != null || e == 0);
-  // int countNotEmptyOrNullOrZeroOrFalse() => count(
-  //       (e) =>
-  //           e is String && e.trim().isNotEmpty ||
-  //           e != null ||
-  //           e == 0 ||
-  //           e == false,
-  //     );
+  int countNull() => count((e) => e == null);
+  int countEmpty() => count((e) => e is String && e.trim().isEmpty);
+  int countNotEmpty() => count((e) => e is String && e.trim().isNotEmpty);
+  int countNotNull() => count((e) => e != null);
+  int countNotEmptyOrNull() =>
+      count((e) => e is String && e.trim().isNotEmpty || e != null);
+  int countNotEmptyOrNullOrZero() =>
+      count((e) => e is String && e.trim().isNotEmpty || e != null || e == 0);
+  int countNotEmptyOrNullOrZeroOrFalse() => count(
+        (e) =>
+            e is String && e.trim().isNotEmpty ||
+            e != null ||
+            e == 0 ||
+            e == false,
+      );
 
-  // int countValue(T value) => count((e) => e == value);
+  int countValue(T value) => count((e) => e == value);
 
   /// * async for each
   Future<void> loop(
@@ -48,6 +48,17 @@ extension ReadAbleIterable<T> on Iterable<T> {
     for (final item in this) {
       await action(item);
     }
+  }
+
+  /// * async Map
+  Future<List<S>> asyncMap<S>(
+    FutureOr<S> Function(T e) action,
+  ) async {
+    final list = <S>[];
+    for (final item in this) {
+      list.add(await action(item));
+    }
+    return list;
   }
 
   /// * return a new `List` without duplicated `elements`
@@ -75,9 +86,7 @@ extension ReadAbleIterable<T> on Iterable<T> {
 
   /// * return element by index
   /// * return `null` if index out of range
-  T? atOrNull(int index) {
-    return length - 1 >= index ? elementAt(index) : null;
-  }
+  T? atOrNull(int index) => length - 1 >= index ? elementAt(index) : null;
 
   /// * return element by index
   /// * return `value` if index out of range
@@ -105,7 +114,6 @@ extension ReadAbleIterable<T> on Iterable<T> {
 
   ///The takeUntil method returns items in the collection until the given callback returns true
   ///If callback never returns true, the takeUntil method will return all items in the collection.
-
   Iterable<T> takeUntil(bool Function(T e) test) {
     final list = where(test).toList();
     return list.isEmpty ? this : list;
