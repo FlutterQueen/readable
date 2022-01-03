@@ -168,8 +168,8 @@ class TestXPage extends StatelessWidget {
                       Theme.of(context).backgroundColor,
                     ),
                 'scaffoldBackgroundColor': (ctx) => identical(
-                      ctx.bottomAppBarColor,
-                      Theme.of(context).bottomAppBarColor,
+                      ctx.scaffoldBackgroundColor,
+                      Theme.of(context).scaffoldBackgroundColor,
                     ),
                 'bottomAppBarColor': (ctx) => identical(
                       ctx.bottomAppBarColor,
