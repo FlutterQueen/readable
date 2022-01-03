@@ -18,15 +18,17 @@ void main() {
   test(
     'await for test',
     () async {
-      for (final sec in times.keys) {
-        final watch = Stopwatch();
-        watch.start();
-        await times[sec]!();
-
-        watch.stop();
-        expect(watch.elapsed.inSeconds, sec);
-      }
+      final result = await Future.wait(
+        times.entries.map((e) async {
+          final watch = Stopwatch();
+          watch.start();
+          await e.value();
+          watch.stop();
+          return watch.elapsed.inSeconds == e.key;
+        }),
+      );
+      prints(result);
+      expect(result.contains(false), isFalse);
     },
-    timeout: Timeout.none,
   );
 }

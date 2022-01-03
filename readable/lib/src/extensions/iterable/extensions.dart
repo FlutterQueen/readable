@@ -23,23 +23,23 @@ extension ReadAbleIterable<T> on Iterable<T> {
   ]) =>
       mapper == null ? length : where(mapper).length;
 
-  int countNull() => count((e) => e == null);
-  int countEmpty() => count((e) => e is String && e.trim().isEmpty);
-  int countNotEmpty() => count((e) => e is String && e.trim().isNotEmpty);
-  int countNotNull() => count((e) => e != null);
-  int countNotEmptyOrNull() =>
-      count((e) => e is String && e.trim().isNotEmpty || e != null);
-  int countNotEmptyOrNullOrZero() =>
-      count((e) => e is String && e.trim().isNotEmpty || e != null || e == 0);
-  int countNotEmptyOrNullOrZeroOrFalse() => count(
-        (e) =>
-            e is String && e.trim().isNotEmpty ||
-            e != null ||
-            e == 0 ||
-            e == false,
-      );
+  // int countNull() => count((e) => e == null);
+  // int countEmpty() => count((e) => e is String && e.trim().isEmpty);
+  // int countNotEmpty() => count((e) => e is String && e.trim().isNotEmpty);
+  // int countNotNull() => count((e) => e != null);
+  // int countNotEmptyOrNull() =>
+  //     count((e) => e is String && e.trim().isNotEmpty || e != null);
+  // int countNotEmptyOrNullOrZero() =>
+  //     count((e) => e is String && e.trim().isNotEmpty || e != null || e == 0);
+  // int countNotEmptyOrNullOrZeroOrFalse() => count(
+  //       (e) =>
+  //           e is String && e.trim().isNotEmpty ||
+  //           e != null ||
+  //           e == 0 ||
+  //           e == false,
+  //     );
 
-  int countValue(T value) => count((e) => e == value);
+  // int countValue(T value) => count((e) => e == value);
 
   /// * async for each
   Future<void> loop(
@@ -50,23 +50,23 @@ extension ReadAbleIterable<T> on Iterable<T> {
     }
   }
 
-  /// * async Map
-  Future<List<S>> asyncMap<S>(
-    FutureOr<S> Function(T e) action,
-  ) async {
-    final list = <S>[];
-    for (final item in this) {
-      list.add(await action(item));
-    }
-    return list;
-  }
+  // /// * async Map
+  // Future<List<S>> asyncMap<S>(
+  //   FutureOr<S> Function(T e) action,
+  // ) async {
+  //   final list = <S>[];
+  //   for (final item in this) {
+  //     list.add(await action(item));
+  //   }
+  //   return list;
+  // }
 
   /// * return a new `List` without duplicated `elements`
   List<T> withoutDuplicate() => toSet().toList();
 
   /// * return a random element from list
   /// ! throws `StateError` if list is empty
-  T get random => elementAt(Random().nextInt(Random().nextInt(length)));
+  T get random => elementAt(Random().nextInt(length));
 
   /// * return the first element
   /// * return `null` if isEmpty

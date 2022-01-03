@@ -1,9 +1,11 @@
 // TODO :: uncomment only tested ones
 ///
 extension ReadableDateTime on DateTime {
-  // bool get isAm => hour < 12;
+  /// * `true` if the date in the morning, `false` otherwise.
+  bool get isAm => hour < 12;
 
-  // bool get isPm => hour >= 12;
+  /// * `true` if the date in the evening, `false` otherwise.
+  bool get isPm => hour >= 12;
 
   // DateTime copyWith({
   //   int? year,
