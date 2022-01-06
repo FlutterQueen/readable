@@ -1,4 +1,5 @@
 import 'package:readable/readable.dart';
+import 'package:readable/src/extensions/iterable/string.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -137,5 +138,27 @@ void main() {
         [1, 2, 3, 4, 5, 6],
       );
     });
+  });
+  group('counter family', () {
+    test(
+      'countNull',
+      () => expect([null, 1, 2, 3, null].countNull(), 2),
+    );
+    test(
+      'countNotNull',
+      () => expect([null, 1, 2, 3, null].countNotNull(), 3),
+    );
+    test(
+      'countEmpty',
+      () => expect(['', '1', '2', '3', '', ''].countEmpty(), 3),
+    );
+    test(
+      'countEmpty',
+      () => expect(['', '1', '2', '3', ''].countNotEmpty(), 3),
+    );
+    test(
+      'countEmpty',
+      () => expect(['x', '1', '2', '3', 'x','x'].countValue('x'), 3),
+    );
   });
 }

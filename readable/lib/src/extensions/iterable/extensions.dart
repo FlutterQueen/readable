@@ -23,23 +23,14 @@ extension ReadAbleIterable<T> on Iterable<T> {
   ]) =>
       mapper == null ? length : where(mapper).length;
 
-  // int countNull() => count((e) => e == null);
-  // int countEmpty() => count((e) => e is String && e.trim().isEmpty);
-  // int countNotEmpty() => count((e) => e is String && e.trim().isNotEmpty);
-  // int countNotNull() => count((e) => e != null);
-  // int countNotEmptyOrNull() =>
-  //     count((e) => e is String && e.trim().isNotEmpty || e != null);
-  // int countNotEmptyOrNullOrZero() =>
-  //     count((e) => e is String && e.trim().isNotEmpty || e != null || e == 0);
-  // int countNotEmptyOrNullOrZeroOrFalse() => count(
-  //       (e) =>
-  //           e is String && e.trim().isNotEmpty ||
-  //           e != null ||
-  //           e == 0 ||
-  //           e == false,
-  //     );
+  /// * return the `count` of the `null` elements
+  int countNull() => count((e) => e == null);
 
-  // int countValue(T value) => count((e) => e == value);
+  /// * return the `length` of the NOT `null` elements
+  int countNotNull() => count((e) => e != null);
+
+  /// counter the element of certain value
+  int countValue(T value) => count((e) => e == value);
 
   /// * async for each
   Future<void> loop(

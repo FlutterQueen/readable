@@ -7,95 +7,102 @@ extension ReadableDateTime on DateTime {
   /// * `true` if the date in the evening, `false` otherwise.
   bool get isPm => hour >= 12;
 
-  // DateTime copyWith({
-  //   int? year,
-  //   int? month,
-  //   int? day,
-  //   int? hour,
-  //   int? minute,
-  //   int? second,
-  //   int? millisecond,
-  // }) =>
-  //     DateTime(
-  //       year ?? this.year,
-  //       month ?? this.month,
-  //       day ?? this.day,
-  //       hour ?? this.hour,
-  //       minute ?? this.minute,
-  //       second ?? this.second,
-  //       millisecond ?? this.millisecond,
-  //     );
+  /// * creates new instance of [DateTime] with the same date
+  /// * but overrides the values of the given parameters
+  DateTime copyWith({
+    int? year,
+    int? month,
+    int? day,
+    int? hour,
+    int? minute,
+    int? second,
+    int? millisecond,
+  }) =>
+      DateTime(
+        year ?? this.year,
+        month ?? this.month,
+        day ?? this.day,
+        hour ?? this.hour,
+        minute ?? this.minute,
+        second ?? this.second,
+        millisecond ?? this.millisecond,
+      );
 
-  // bool get isTody {
-  //   final now = DateTime.now();
-  //   return copyWith(
-  //     year: year,
-  //     month: month,
-  //     day: day,
-  //   ).isAtSameMomentAs(
-  //     now.copyWith(
-  //       year: now.year,
-  //       month: now.month,
-  //       day: now.day,
-  //     ),
-  //   );
-  // }
+  /// * return [true] if the date is today, [false] otherwise.
+  bool get isToday {
+    final now = DateTime.now();
+    return now.year == year && now.month == month && now.day == day;
+  }
 
-  // bool get isTomorrow {
-  //   final now = DateTime.now();
-  //   return copyWith(
-  //     year: year,
-  //     month: month,
-  //     day: day + 1,
-  //   ).isAtSameMomentAs(
-  //     now.copyWith(
-  //       year: now.year,
-  //       month: now.month,
-  //       day: now.day + 1,
-  //     ),
-  //   );
-  // }
+  /// * return [true] if the date is tomorrow, [false] otherwise.
+  bool get isTomorrow {
+    final now = DateTime.now();
+    final tomorrow = now.add(const Duration(days: 1));
+    return tomorrow.year == year &&
+        tomorrow.month == month &&
+        tomorrow.day == day;
+  }
 
-  // bool get isYesterday {
-  //   final now = DateTime.now();
-  //   return copyWith(
-  //     year: year,
-  //     month: month,
-  //     day: day - 1,
-  //   ).isAtSameMomentAs(
-  //     now.copyWith(
-  //       year: now.year,
-  //       month: now.month,
-  //       day: now.day - 1,
-  //     ),
-  //   );
-  // }
+  /// * return [true] if the date is yesterday, [false] otherwise.
+  bool get isYesterday {
+    final now = DateTime.now();
+    final yesterday = now.subtract(const Duration(days: 1));
+    return yesterday.year == year &&
+        yesterday.month == month &&
+        yesterday.day == day;
+  }
 
-  // bool get isInThisMonth {
-  //   final now = DateTime.now();
-  //   return now.year == year && now.month == month;
-  // }
+  /// * return [true] if the date is In This Month, [false] otherwise.
+  bool get isInThisMonth {
+    final now = DateTime.now();
+    return now.year == year && now.month == month;
+  }
 
-  // bool get isInThisYear => year == DateTime.now().year;
+  /// * return [true] if the date is In This Year, [false] otherwise.
+  bool get isInThisYear => year == DateTime.now().year;
 
-  // // bool get isInThisWeek
+  /// * return [true] if the date is In The Future, [false] otherwise.
+  bool get isInTheFuture => isAfter(DateTime.now());
 
-  // bool get isInTheFuture => isAfter(DateTime.now());
-  // bool get isInThePast => isBefore(DateTime.now());
-  // bool get isInJanuary => month == 1;
-  // bool get isInFebruary => month == 2;
-  // bool get isInMarch => month == 3;
-  // bool get isInApril => month == 4;
-  // bool get isInMay => month == 5;
-  // bool get isInJune => month == 6;
-  // bool get isInJuly => month == 7;
-  // bool get isInAugust => month == 8;
-  // bool get isInSeptember => month == 9;
-  // bool get isInOctober => month == 10;
-  // bool get isInNovember => month == 11;
-  // bool get isInDecember => month == 12;
+  /// * return [true] if the date is In The past, [false] otherwise.
+  bool get isInThePast => isBefore(DateTime.now());
 
-  // TODO :: is Last
+  /// * return [true] if the date is In January, [false] otherwise.
+  bool get isInJanuary => month == 1;
+
+  /// * return [true] if the date is In February, [false] otherwise.
+  bool get isInFebruary => month == 2;
+
+  /// * return [true] if the date is In March, [false] otherwise.
+  bool get isInMarch => month == 3;
+
+  /// * return [true] if the date is In April, [false] otherwise.
+  bool get isInApril => month == 4;
+
+  /// * return [true] if the date is In May, [false] otherwise.
+  bool get isInMay => month == 5;
+
+  /// * return [true] if the date is In June, [false] otherwise.
+  bool get isInJune => month == 6;
+
+  /// * return [true] if the date is In July, [false] otherwise.
+  bool get isInJuly => month == 7;
+
+  /// * return [true] if the date is In August, [false] otherwise.
+  bool get isInAugust => month == 8;
+
+  /// * return [true] if the date is In September, [false] otherwise.
+  bool get isInSeptember => month == 9;
+
+  /// * return [true] if the date is In October, [false] otherwise.
+  bool get isInOctober => month == 10;
+
+  /// * return [true] if the date is In November, [false] otherwise.
+  bool get isInNovember => month == 11;
+
+  /// * return [true] if the date is In December, [false] otherwise.
+  bool get isInDecember => month == 12;
+
   // bool get isLastSaturdayOfTheMonth => day == DateTime.saturday;
   // bool get isLastSaturdayOfTheYear => day == DateTime.saturday;
   // bool get isLastSundayOfTheMonth => day == DateTime.sunday;
@@ -110,5 +117,4 @@ extension ReadableDateTime on DateTime {
   // bool get isLastThursdayOfTheYear => day == DateTime.thursday;
   // bool get isLastFridayOfTheMonth => day == DateTime.friday;
   // bool get isLastFridayOfTheYear => day == DateTime.friday;
-
 }

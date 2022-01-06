@@ -3,6 +3,9 @@ library readable;
 /// * bool
 export 'src/extensions/bool.dart';
 
+/// * DateTime
+export 'src/extensions/date_time.dart';
+
 /// * Iterable
 export 'src/extensions/iterable/extensions.dart';
 export 'src/extensions/iterable/of_num.dart';
