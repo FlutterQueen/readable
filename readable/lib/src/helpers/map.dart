@@ -1,8 +1,8 @@
 /// * merges to maps into single one
 /// * if the key found in both maps it will use the one from the second map
-Map<Object?, Object?>? mergeTwoMaps(
-  Map<Object?, Object?>? a,
-  Map<Object?, Object?>? b,
+Map<String, Object?>? mergeTwoMaps(
+  Map<String, Object?>? a,
+  Map<String, Object?>? b,
 ) {
   /// if a is null then return b
   /// if b is null then return a
@@ -19,15 +19,14 @@ Map<Object?, Object?>? mergeTwoMaps(
       final aValueIsMap = a[key] is Map;
       final bValueIsMap = b[key] is Map;
       result[key] = mergeTwoMaps(
-        aValueIsMap ? a[key] as Map? : {},
-        bValueIsMap ? b[key] as Map? : {},
+        aValueIsMap ? a[key] as Map<String, Object?>? : {},
+        bValueIsMap ? b[key] as Map<String, Object?>? : {},
       );
     } else {
       /// else just use the value from the second map
       result[key] = b[key];
     }
   }
-
   return result;
 }
 
