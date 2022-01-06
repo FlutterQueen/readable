@@ -279,19 +279,19 @@ void main() {
       final m2 = DateTime(2022, 2, 28);
       final m3 = DateTime(2022, 3, 28);
       final m4 = DateTime(2022, 4, 25);
-      expect(m1.isLastMondayOfTheMonth, isTrue);
-      expect(m2.isLastMondayOfTheMonth, isTrue);
-      expect(m3.isLastMondayOfTheMonth, isTrue);
-      expect(m4.isLastMondayOfTheMonth, isTrue);
+      expect(m1.isLastMondayThisMonth, isTrue);
+      expect(m2.isLastMondayThisMonth, isTrue);
+      expect(m3.isLastMondayThisMonth, isTrue);
+      expect(m4.isLastMondayThisMonth, isTrue);
       final dateNotMonday = DateTime(2022, 1, 30);
       expect(
-        dateNotMonday.isLastMondayOfTheMonth,
+        dateNotMonday.isLastMondayThisMonth,
         isFalse,
         reason: 'not monday',
       );
       final mondayButNotLast = DateTime(2022, 1, 24);
       expect(
-        mondayButNotLast.isLastMondayOfTheMonth,
+        mondayButNotLast.isLastMondayThisMonth,
         isFalse,
         reason: 'monday but not the last in the month',
       );
