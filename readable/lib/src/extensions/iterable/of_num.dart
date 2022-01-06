@@ -1,8 +1,11 @@
 // import 'package:readable/src/extensions/iterable/extensions.dart';
 
+import 'package:readable/src/extensions/iterable/extensions.dart';
+
 /// list `readableX`
 extension ReadableNumListX on Iterable<num> {
-  // int countZeros() => countValue(0);
+  ///  how many elements == zero
+  int countZeros() => countValue(0);
 
   /// * return list summation
   /// * return `null` if list is empty
@@ -12,11 +15,10 @@ extension ReadableNumListX on Iterable<num> {
     /// holder for summation
     num sum = 0;
     for (final n in this) {
-      /// for each element add it to summation
+      // for each element add it to summation
       sum += n;
     }
-
-    /// return the summation result
+    // return the summation result
     return sum;
   }
 

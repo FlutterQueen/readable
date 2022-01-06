@@ -103,12 +103,44 @@ extension ReadableDateTime on DateTime {
   /// * return [true] if the date is In December, [false] otherwise.
   bool get isInDecember => month == 12;
 
+  /// day of week family
+
+  /// * return [true] if the date is Monday, [false] otherwise.
+  bool get isMonday => weekday == DateTime.monday;
+
+  /// * return [true] if the date is Tuesday, [false] otherwise.
+  bool get isTuesday => weekday == DateTime.tuesday;
+
+  /// * return [true] if the date is Wednesday, [false] otherwise.
+  bool get isWednesday => weekday == DateTime.wednesday;
+
+  /// * return [true] if the date is Thursday, [false] otherwise.
+  bool get isThursday => weekday == DateTime.thursday;
+
+  /// * return [true] if the date is Friday, [false] otherwise.
+  bool get isFriday => weekday == DateTime.friday;
+
+  /// * return [true] if the date is Saturday, [false] otherwise.
+  bool get isSaturday => weekday == DateTime.saturday;
+
+  /// * return [true] if the date is Sunday, [false] otherwise.
+  bool get isSunday => weekday == DateTime.sunday;
+
+  /// return new [DateTime] without the time part
+  /// for example =>  `2020-01-01T12:51:42.325`
+  /// to =>  `2020-01-01T00:00:00.000`
+  DateTime withoutTime() => DateTime(year, month, day);
+
+  /// * return new [true] the last monday of the month
+  bool get isLastMondayOfTheMonth =>
+      isMonday &&
+      month + 1 == DateTime(year, month, day + DateTime.daysPerWeek).month;
+  // bool get isLastMondayOfTheYear => day == DateTime.monday;
   // bool get isLastSaturdayOfTheMonth => day == DateTime.saturday;
   // bool get isLastSaturdayOfTheYear => day == DateTime.saturday;
   // bool get isLastSundayOfTheMonth => day == DateTime.sunday;
   // bool get isLastSundayOfTheYear => day == DateTime.sunday;
-  // bool get isLastMondayOfTheMonth => day == DateTime.monday;
-  // bool get isLastMondayOfTheYear => day == DateTime.monday;
+
   // bool get isLastTuesdayOfTheMonth => day == DateTime.tuesday;
   // bool get isLastTuesdayOfTheYear => day == DateTime.tuesday;
   // bool get isLastWednesdayOfTheMonth => day == DateTime.wednesday;

@@ -172,4 +172,15 @@ void main() {
       expect(() => <num>[].min(), throwsStateError);
     });
   });
+  group('count family', () {
+    test('countZeros', () {
+      expect(
+        <num>[1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 0, 0, 0, 0, 0].countZeros(),
+        10,
+      );
+    });
+    test('it throwsStateError value if the list is empty', () {
+      expect(() => <num>[].min(), throwsStateError);
+    });
+  });
 }

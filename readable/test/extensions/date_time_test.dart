@@ -112,82 +112,189 @@ void main() {
     expect(future.isInThePast, isFalse);
     expect(past.isInThePast, isTrue);
   });
-  test('isInJanuary', () {
-    final date1 = DateTime(0);
-    final date2 = DateTime(0, 2);
-    expect(date1.isInJanuary, isTrue);
-    expect(date2.isInJanuary, isFalse);
+  group('isIn Family', () {
+    test('isInJanuary', () {
+      final date1 = DateTime(0);
+      final date2 = DateTime(0, 2);
+      expect(date1.isInJanuary, isTrue);
+      expect(date2.isInJanuary, isFalse);
+    });
+    test('isInFebruary', () {
+      final date1 = DateTime(0, 2);
+      final date2 = DateTime(0, 3);
+      expect(date1.isInFebruary, isTrue);
+      expect(date2.isInFebruary, isFalse);
+    });
+    test('isInMarch', () {
+      final date1 = DateTime(0, 3);
+      final date2 = DateTime(0, 4);
+      expect(date1.isInMarch, isTrue);
+      expect(date2.isInMarch, isFalse);
+    });
+    test('isInApril', () {
+      final date1 = DateTime(0, 4);
+      final date2 = DateTime(0);
+      expect(date1.isInApril, isTrue);
+      expect(date2.isInApril, isFalse);
+    });
+    test('isInMay', () {
+      final date1 = DateTime(0, 5);
+      final date2 = DateTime(0);
+      expect(date1.isInMay, isTrue);
+      expect(date2.isInMay, isFalse);
+    });
+    test('isInJune', () {
+      final date1 = DateTime(0, 6);
+      final date2 = DateTime(0);
+      expect(date1.isInJune, isTrue);
+      expect(date2.isInJune, isFalse);
+    });
+    test('isInJuly', () {
+      final date1 = DateTime(0, 7);
+      final date2 = DateTime(0);
+      expect(date1.isInJuly, isTrue);
+      expect(date2.isInJuly, isFalse);
+    });
+    test('isInAugust', () {
+      final date1 = DateTime(0, 8);
+      final date2 = DateTime(0);
+      expect(date1.isInAugust, isTrue);
+      expect(date2.isInAugust, isFalse);
+    });
+    test('isInSeptember', () {
+      final date1 = DateTime(0, 9);
+      final date2 = DateTime(0);
+      expect(date1.isInSeptember, isTrue);
+      expect(date2.isInSeptember, isFalse);
+    });
+    test('isInOctober', () {
+      final date1 = DateTime(0, 10);
+      final date2 = DateTime(0);
+      expect(date1.isInOctober, isTrue);
+      expect(date2.isInOctober, isFalse);
+    });
+    test('isInNovember', () {
+      final date1 = DateTime(0, 11);
+      final date2 = DateTime(0);
+      expect(date1.isInNovember, isTrue);
+      expect(date2.isInNovember, isFalse);
+    });
+    test('isInNovember', () {
+      final date1 = DateTime(0, 11);
+      final date2 = DateTime(0);
+      expect(date1.isInNovember, isTrue);
+      expect(date2.isInNovember, isFalse);
+    });
+    test('isInDecember', () {
+      final date1 = DateTime(0, 12);
+      final date2 = DateTime(0);
+      expect(date1.isInDecember, isTrue);
+      expect(date2.isInDecember, isFalse);
+    });
   });
-  test('isInFebruary', () {
-    final date1 = DateTime(0, 2);
-    final date2 = DateTime(0, 3);
-    expect(date1.isInFebruary, isTrue);
-    expect(date2.isInFebruary, isFalse);
+
+  test('withoutTime()', () {
+    final now = DateTime.now();
+    expect(
+      now.withoutTime(),
+      DateTime(now.year, now.month, now.day),
+    );
   });
-  test('isInMarch', () {
-    final date1 = DateTime(0, 3);
-    final date2 = DateTime(0, 4);
-    expect(date1.isInMarch, isTrue);
-    expect(date2.isInMarch, isFalse);
+  group('is day of week Family', () {
+    test('isMonday', () {
+      final day = DateTime(2022, 1, 3);
+      expect(day.isMonday, isTrue);
+      expect(day.isTuesday, isFalse);
+      expect(day.isWednesday, isFalse);
+      expect(day.isThursday, isFalse);
+      expect(day.isFriday, isFalse);
+      expect(day.isSaturday, isFalse);
+      expect(day.isSunday, isFalse);
+    });
+    test('isThursday', () {
+      final day = DateTime(2022, 1, 4);
+      expect(day.isMonday, isFalse);
+      expect(day.isTuesday, isTrue);
+      expect(day.isWednesday, isFalse);
+      expect(day.isThursday, isFalse);
+      expect(day.isFriday, isFalse);
+      expect(day.isSaturday, isFalse);
+      expect(day.isSunday, isFalse);
+    });
+    test('isWednesday', () {
+      final day = DateTime(2022, 1, 5);
+      expect(day.isMonday, isFalse);
+      expect(day.isTuesday, isFalse);
+      expect(day.isWednesday, isTrue);
+      expect(day.isThursday, isFalse);
+      expect(day.isFriday, isFalse);
+      expect(day.isSaturday, isFalse);
+      expect(day.isSunday, isFalse);
+    });
+    test('isThursday', () {
+      final day = DateTime(2022, 1, 6);
+      expect(day.isMonday, isFalse);
+      expect(day.isTuesday, isFalse);
+      expect(day.isWednesday, isFalse);
+      expect(day.isThursday, isTrue);
+      expect(day.isFriday, isFalse);
+      expect(day.isSaturday, isFalse);
+      expect(day.isSunday, isFalse);
+    });
+    test('isFriday', () {
+      final day = DateTime(2022, 1, 7);
+      expect(day.isMonday, isFalse);
+      expect(day.isTuesday, isFalse);
+      expect(day.isWednesday, isFalse);
+      expect(day.isThursday, isFalse);
+      expect(day.isFriday, isTrue);
+      expect(day.isSaturday, isFalse);
+      expect(day.isSunday, isFalse);
+    });
+    test('isSaturday', () {
+      final day = DateTime(2022, 1, 8);
+      expect(day.isMonday, isFalse);
+      expect(day.isTuesday, isFalse);
+      expect(day.isWednesday, isFalse);
+      expect(day.isThursday, isFalse);
+      expect(day.isFriday, isFalse);
+      expect(day.isSaturday, isTrue);
+      expect(day.isSunday, isFalse);
+    });
+    test('isSunday', () {
+      final day = DateTime(2022, 1, 9);
+      expect(day.isMonday, isFalse);
+      expect(day.isTuesday, isFalse);
+      expect(day.isWednesday, isFalse);
+      expect(day.isThursday, isFalse);
+      expect(day.isFriday, isFalse);
+      expect(day.isSaturday, isFalse);
+      expect(day.isSunday, isTrue);
+    });
   });
-  test('isInApril', () {
-    final date1 = DateTime(0, 4);
-    final date2 = DateTime(0);
-    expect(date1.isInApril, isTrue);
-    expect(date2.isInApril, isFalse);
-  });
-  test('isInMay', () {
-    final date1 = DateTime(0, 5);
-    final date2 = DateTime(0);
-    expect(date1.isInMay, isTrue);
-    expect(date2.isInMay, isFalse);
-  });
-  test('isInJune', () {
-    final date1 = DateTime(0, 6);
-    final date2 = DateTime(0);
-    expect(date1.isInJune, isTrue);
-    expect(date2.isInJune, isFalse);
-  });
-  test('isInJuly', () {
-    final date1 = DateTime(0, 7);
-    final date2 = DateTime(0);
-    expect(date1.isInJuly, isTrue);
-    expect(date2.isInJuly, isFalse);
-  });
-  test('isInAugust', () {
-    final date1 = DateTime(0, 8);
-    final date2 = DateTime(0);
-    expect(date1.isInAugust, isTrue);
-    expect(date2.isInAugust, isFalse);
-  });
-  test('isInSeptember', () {
-    final date1 = DateTime(0, 9);
-    final date2 = DateTime(0);
-    expect(date1.isInSeptember, isTrue);
-    expect(date2.isInSeptember, isFalse);
-  });
-  test('isInOctober', () {
-    final date1 = DateTime(0, 10);
-    final date2 = DateTime(0);
-    expect(date1.isInOctober, isTrue);
-    expect(date2.isInOctober, isFalse);
-  });
-  test('isInNovember', () {
-    final date1 = DateTime(0, 11);
-    final date2 = DateTime(0);
-    expect(date1.isInNovember, isTrue);
-    expect(date2.isInNovember, isFalse);
-  });
-  test('isInNovember', () {
-    final date1 = DateTime(0, 11);
-    final date2 = DateTime(0);
-    expect(date1.isInNovember, isTrue);
-    expect(date2.isInNovember, isFalse);
-  });
-  test('isInDecember', () {
-    final date1 = DateTime(0, 12);
-    final date2 = DateTime(0);
-    expect(date1.isInDecember, isTrue);
-    expect(date2.isInDecember, isFalse);
+  group('isLastOf family', () {
+    test('isLastMondayOfTheMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 31);
+      final m2 = DateTime(2022, 2, 28);
+      final m3 = DateTime(2022, 3, 28);
+      final m4 = DateTime(2022, 4, 25);
+      expect(m1.isLastMondayOfTheMonth, isTrue);
+      expect(m2.isLastMondayOfTheMonth, isTrue);
+      expect(m3.isLastMondayOfTheMonth, isTrue);
+      expect(m4.isLastMondayOfTheMonth, isTrue);
+      final dateNotMonday = DateTime(2022, 1, 30);
+      expect(
+        dateNotMonday.isLastMondayOfTheMonth,
+        isFalse,
+        reason: 'not monday',
+      );
+      final mondayButNotLast = DateTime(2022, 1, 24);
+      expect(
+        mondayButNotLast.isLastMondayOfTheMonth,
+        isFalse,
+        reason: 'monday but not the last in the month',
+      );
+    });
   });
 }

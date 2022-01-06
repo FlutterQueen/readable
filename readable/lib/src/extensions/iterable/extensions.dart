@@ -41,16 +41,16 @@ extension ReadAbleIterable<T> on Iterable<T> {
     }
   }
 
-  // /// * async Map
-  // Future<List<S>> asyncMap<S>(
-  //   FutureOr<S> Function(T e) action,
-  // ) async {
-  //   final list = <S>[];
-  //   for (final item in this) {
-  //     list.add(await action(item));
-  //   }
-  //   return list;
-  // }
+  /// * async Map
+  Future<List<S>> asyncMap<S>(
+    FutureOr<S> Function(T e) action,
+  ) async {
+    final list = <S>[];
+    for (final item in this) {
+      list.add(await action(item));
+    }
+    return list;
+  }
 
   /// * return a new `List` without duplicated `elements`
   List<T> withoutDuplicate() => toSet().toList();

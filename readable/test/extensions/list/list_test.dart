@@ -158,7 +158,16 @@ void main() {
     );
     test(
       'countEmpty',
-      () => expect(['x', '1', '2', '3', 'x','x'].countValue('x'), 3),
+      () => expect(['x', '1', '2', '3', 'x', 'x'].countValue('x'), 3),
     );
+  });
+
+  test('asyncMap', () async {
+    final list = [1, 2, 3, 4, 5];
+    final result = await list.asyncMap((e) async {
+      await oneSecond();
+      return e * 2;
+    });
+    expect(result, [2, 4, 6, 8, 10]);
   });
 }
