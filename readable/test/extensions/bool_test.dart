@@ -12,6 +12,11 @@ void main() {
       test('convert bool to int if true return 1 else 0', () {
         expect(false.toInt(), 0);
       });
+
+      test('toggle', () {
+        expect(true.toggle(), isFalse);
+        expect(false.toggle(), isTrue);
+      });
     },
   );
 }
