@@ -273,6 +273,52 @@ void main() {
     });
   });
   group('isLastOf family', () {
+    test('isLastSaturdayThisMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 29);
+      final m2 = DateTime(2022, 2, 26);
+      final m3 = DateTime(2022, 3, 26);
+      final m4 = DateTime(2022, 4, 30);
+      expect(m1.isLastSaturdayThisMonth, isTrue);
+      expect(m2.isLastSaturdayThisMonth, isTrue);
+      expect(m3.isLastSaturdayThisMonth, isTrue);
+      expect(m4.isLastSaturdayThisMonth, isTrue);
+      final dateNotSaturday = DateTime(2022, 1, 28);
+      expect(
+        dateNotSaturday.isLastSaturdayThisMonth,
+        isFalse,
+        reason: 'not saturday',
+      );
+      final saturdayButNotLast = DateTime(2022, 1, 22);
+      expect(
+        saturdayButNotLast.isLastSaturdayThisMonth,
+        isFalse,
+        reason: 'saturday but not the last in the month',
+      );
+    });
+    test('isLastSundayThisMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 30);
+      final m2 = DateTime(2022, 2, 27);
+      final m3 = DateTime(2022, 3, 27);
+      final m4 = DateTime(2022, 4, 24);
+      expect(m1.isLastSundayThisMonth, isTrue);
+      expect(m2.isLastSundayThisMonth, isTrue);
+      expect(m3.isLastSundayThisMonth, isTrue);
+      expect(m4.isLastSundayThisMonth, isTrue);
+      final dateNotSunday = DateTime(2022, 1, 29);
+      expect(
+        dateNotSunday.isLastSundayThisMonth,
+        isFalse,
+        reason: 'not sunday',
+      );
+      final saturdayButNotLast = DateTime(2022, 1, 23);
+      expect(
+        saturdayButNotLast.isLastSundayThisMonth,
+        isFalse,
+        reason: 'sunday but not the last in the month',
+      );
+    });
     test('isLastMondayOfTheMonth', () {
       /// last of month
       final m1 = DateTime(2022, 1, 31);
@@ -294,6 +340,98 @@ void main() {
         mondayButNotLast.isLastMondayThisMonth,
         isFalse,
         reason: 'monday but not the last in the month',
+      );
+    });
+    test('isLastTuesdayThisMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 25);
+      final m2 = DateTime(2022, 2, 22);
+      final m3 = DateTime(2022, 3, 29);
+      final m4 = DateTime(2022, 4, 26);
+      expect(m1.isLastTuesdayThisMonth, isTrue);
+      expect(m2.isLastTuesdayThisMonth, isTrue);
+      expect(m3.isLastTuesdayThisMonth, isTrue);
+      expect(m4.isLastTuesdayThisMonth, isTrue);
+      final dateNotTuesday = DateTime(2022, 1, 24);
+      expect(
+        dateNotTuesday.isLastTuesdayThisMonth,
+        isFalse,
+        reason: 'not Tuesday',
+      );
+      final tuesdayButNotLast = DateTime(2022, 1, 18);
+      expect(
+        tuesdayButNotLast.isLastTuesdayThisMonth,
+        isFalse,
+        reason: 'Tuesday but not the last in the month',
+      );
+    });
+    test('isLastWednesdayThisMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 26);
+      final m2 = DateTime(2022, 2, 23);
+      final m3 = DateTime(2022, 3, 30);
+      final m4 = DateTime(2022, 4, 27);
+      expect(m1.isLastWednesdayThisMonth, isTrue);
+      expect(m2.isLastWednesdayThisMonth, isTrue);
+      expect(m3.isLastWednesdayThisMonth, isTrue);
+      expect(m4.isLastWednesdayThisMonth, isTrue);
+      final dateNotTuesday = DateTime(2022, 1, 24);
+      expect(
+        dateNotTuesday.isLastWednesdayThisMonth,
+        isFalse,
+        reason: 'not Wednesday',
+      );
+      final wednesdayButNotLast = DateTime(2022, 1, 19);
+      expect(
+        wednesdayButNotLast.isLastWednesdayThisMonth,
+        isFalse,
+        reason: 'Wednesday but not the last in the month',
+      );
+    });
+    test('isLastThursdayThisMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 27);
+      final m2 = DateTime(2022, 2, 24);
+      final m3 = DateTime(2022, 3, 31);
+      final m4 = DateTime(2022, 4, 28);
+      expect(m1.isLastThursdayThisMonth, isTrue);
+      expect(m2.isLastThursdayThisMonth, isTrue);
+      expect(m3.isLastThursdayThisMonth, isTrue);
+      expect(m4.isLastThursdayThisMonth, isTrue);
+      final dateNotThursday = DateTime(2022, 1, 24);
+      expect(
+        dateNotThursday.isLastThursdayThisMonth,
+        isFalse,
+        reason: 'not Thursday',
+      );
+      final thursdayButNotLast = DateTime(2022, 1, 20);
+      expect(
+        thursdayButNotLast.isLastThursdayThisMonth,
+        isFalse,
+        reason: 'Thursday but not the last in the month',
+      );
+    });
+    test('isLastFridayThisMonth', () {
+      /// last of month
+      final m1 = DateTime(2022, 1, 28);
+      final m2 = DateTime(2022, 2, 25);
+      final m3 = DateTime(2022, 3, 25);
+      final m4 = DateTime(2022, 4, 29);
+      expect(m1.isLastFridayThisMonth, isTrue);
+      expect(m2.isLastFridayThisMonth, isTrue);
+      expect(m3.isLastFridayThisMonth, isTrue);
+      expect(m4.isLastFridayThisMonth, isTrue);
+      final dateNotFriday = DateTime(2022, 1, 15);
+      expect(
+        dateNotFriday.isLastFridayThisMonth,
+        isFalse,
+        reason: 'not Friday',
+      );
+      final fridayButNotLast = DateTime(2022, 1, 20);
+      expect(
+        fridayButNotLast.isLastFridayThisMonth,
+        isFalse,
+        reason: 'Friday but not the last in the month',
       );
     });
   });

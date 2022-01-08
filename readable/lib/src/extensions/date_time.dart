@@ -168,40 +168,42 @@ extension ReadableDateTime on DateTime {
       month + 1 == DateTime(year, month, day + DateTime.daysPerWeek).month;
 
   /// * return   [true] the first saturday of the month
-  bool get isFirstSaturdayThisMonth =>
-      isSaturday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  /// TODO :: date wont work with last month of the year
+  // bool get isFirstSaturdayThisMonth =>
+  //     isSaturday &&
+  //     subtract(const Duration()).month ==
+  //         DateTime(year, month, day - DateTime.daysPerWeek).month;
 
-  /// * return  [true] the first sunday of the month
-  bool get isFirstSundayThisMonth =>
-      isSunday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  // /// * return  [true] the first sunday of the month
+  // bool get isFirstSundayThisMonth =>
+  //     isSunday &&
+  //     month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
 
-  /// * return   [true] the first monday of the month
-  bool get isFirstMondayThisMonth =>
-      isMonday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  // /// * return   [true] the first monday of the month
+  // bool get isFirstMondayThisMonth =>
+  //     isMonday &&
+  //     month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
 
-  /// * return   [true] the first tuesday of the month
+  // /// * return   [true] the first tuesday of the month
 
-  bool get isFirstTuesdayThisMonth =>
-      isTuesday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  // bool get isFirstTuesdayThisMonth =>
+  //     isTuesday &&
+  //     month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
 
-  /// * return   [true] the first wednesday of the month
-  bool get isFirstWednesdayThisMonth =>
-      isWednesday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  // /// * return   [true] the first wednesday of the month
+  // bool get isFirstWednesdayThisMonth =>
+  //     isWednesday &&
+  //     month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
 
-  /// * return   [true] the first thursday of the month
-  bool get isFirstThursdayThisMonth =>
-      isThursday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  // /// * return   [true] the first thursday of the month
+  // bool get isFirstThursdayThisMonth =>
+  //     isThursday &&
+  //     month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
 
-  /// * return   [true] the first friday of the month
-  bool get isFirstFridayThisMonth =>
-      isFriday &&
-      month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
+  // /// * return   [true] the first friday of the month
+  // bool get isFirstFridayThisMonth =>
+  //     isFriday &&
+  //     month - 1 == DateTime(year, month, day - DateTime.daysPerWeek).month;
 
   // bool get isLastSaturdayOfTheYear => day == DateTime.saturday;
   // bool get isLastSundayOfTheYear => day == DateTime.sunday;
