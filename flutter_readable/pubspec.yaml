@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  readable: ^0.0.2
+  readable: ^0.0.3
 
 dev_dependencies:
   flutter_test:
