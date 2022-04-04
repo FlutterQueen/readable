@@ -27,4 +27,7 @@ extension QMediaQueryX on BuildContext {
   /// shortcut for `MediaQuery.of(context).orientation == Orientation.landscape`
   bool get isLandscape =>
       MediaQuery.of(this).orientation == Orientation.landscape;
+
+  /// shortcut for `MediaQuery.of(context).alwaysUse24HourFormat`
+  bool get alwaysUse24HourFormat => MediaQuery.of(this).alwaysUse24HourFormat;
 }

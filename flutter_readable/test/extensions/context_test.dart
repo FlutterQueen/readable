@@ -30,6 +30,10 @@ class TestXPage extends StatelessWidget {
                       ctx.mediaQueryPadding,
                       MediaQuery.of(ctx).padding,
                     ),
+                'alwaysUse24HourFormat': (ctx) => identical(
+                      ctx.alwaysUse24HourFormat,
+                      MediaQuery.of(ctx).alwaysUse24HourFormat,
+                    ),
                 'orientation': (ctx) =>
                     identical(ctx.orientation, MediaQuery.of(ctx).orientation),
 

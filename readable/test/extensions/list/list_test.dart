@@ -1,5 +1,4 @@
 import 'package:readable/readable.dart';
-import 'package:readable/src/extensions/iterable/string.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 

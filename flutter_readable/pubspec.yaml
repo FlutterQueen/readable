@@ -1,6 +1,6 @@
 name: flutter_readable
-description: extenstions and helpers for dart to save time , make the code more readable and smaller
-version: 0.0.3
+description: extensions and helpers for dart to save time , make the code more readable and smaller
+version: 0.0.4
 homepage: https://github.com/FlutterQueen/readable
 
 environment:

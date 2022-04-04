@@ -7,6 +7,7 @@
 <a href="https://img.shields.io/github/issues/FlutterQueen/readable"><img src="https://img.shields.io/github/forks/FlutterQueen/readable?style=for-the-badge" alt="forks"></a>
 <a href="https://img.shields.io/github/issues/FlutterQueen/readable"><img src="https://img.shields.io/github/stars/FlutterQueen/readable?style=for-the-badge" alt="Starts"></a>
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+<a href="https://www.buymeacoffee.com/maxzod" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## [Official Documentation site](https://flutterqueen.github.io/website/)
 
@@ -19,7 +20,7 @@
 ### Save time and effort
 
 - no more helpers or extensions scattered in the project .
-- helpers already built and ready to be used out of the box .
+- helpers already built , fully tested and ready to be used out of the box .
 - you will find many uses cases where `readable` can be helpful
 
 ```dart
