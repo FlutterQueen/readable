@@ -61,6 +61,7 @@ Object? findInMap(
       );
     }
   }
+  return null;
 }
 
 /// takes a Map and return the flat keys to the map

@@ -47,6 +47,10 @@ extension StringConvertX on String {
   /// else throw `FormatException`
   num toNum() => num.parse(this);
 
+  /// convert String to `num` if is possible
+  /// else return `0`
+  num toNumOrZero() => toNumOr(0);
+
   /// convert String to DateTime if is possible
   /// else will return null
   num? toNumOrNull() => num.tryParse(this);
