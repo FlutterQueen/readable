@@ -181,4 +181,15 @@ void main() {
       });
     },
   );
+  group(
+    'toNumOrZero function',
+    () {
+      test('convert String to num if is possible', () {
+        expect('12'.toNumOrZero(), 12.0);
+      });
+      test('return 0  if is not possible', () {
+        expect('int'.toNumOrZero(), 0);
+      });
+    },
+  );
 }

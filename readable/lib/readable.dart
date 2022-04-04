@@ -8,7 +8,9 @@ export 'src/extensions/date_time.dart';
 
 /// * Iterable
 export 'src/extensions/iterable/extensions.dart';
+export 'src/extensions/iterable/null.dart';
 export 'src/extensions/iterable/of_num.dart';
+export 'src/extensions/iterable/string.dart';
 
 /// * Map
 export 'src/extensions/map/map.dart';
