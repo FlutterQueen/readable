@@ -212,4 +212,8 @@ extension ReadableDateTime on DateTime {
   // bool get isLastWednesdayOfTheYear => day == DateTime.wednesday;
   // bool get isLastThursdayOfTheYear => day == DateTime.thursday;
   // bool get isLastFridayOfTheYear => day == DateTime.friday;
+
+  /// returns true if date is betwwen tow dates
+  bool isBetween(DateTime start, DateTime end) =>
+      start.isBefore(this) && end.isAfter(this);
 }

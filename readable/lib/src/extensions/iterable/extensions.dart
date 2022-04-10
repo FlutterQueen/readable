@@ -95,8 +95,8 @@ extension ReadAbleIterable<T> on Iterable<T> {
   }
 
   /// * like `map()` function but now you have the index with the element
-  List<T> mapWithIndex(T Function(int index, T element) mapper) {
-    final result = <T>[];
+  List<E> mapWithIndex<E>(E Function(int index, T element) mapper) {
+    final result = <E>[];
     for (int i = 0; i < length; i++) {
       result.add(mapper(i, elementAt(i)));
     }
@@ -109,4 +109,7 @@ extension ReadAbleIterable<T> on Iterable<T> {
     final list = where(test).toList();
     return list.isEmpty ? this : list;
   }
+
+  /// return true if iteable not contains input
+  bool notContains(Iterable<T> input) => !contains(input);
 }

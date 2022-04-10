@@ -6,4 +6,8 @@ extension ReadableBoolX on bool {
 
   /// * return reversed bool
   bool toggle() => !this;
+
+  // Future<E?> then<E>(E Function() onTrue) async {
+  // return onTrue();
+  // }
 }
