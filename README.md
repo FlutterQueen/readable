@@ -1,5 +1,7 @@
 # **`Q U E E N 👑`**
 
+## **`readable`**
+
 <a href="https://pub.dev/packages/readable"><img src="https://img.shields.io/pub/v/readable?style=for-the-badge" alt="Pub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/FLutterQueen/readable?style=for-the-badge" alt="License: MIT"></a>
 <a href="https://img.shields.io/github/issues/FlutterQueen/readable"><img src="https://img.shields.io/github/issues/FlutterQueen/readable?logo=queen&style=for-the-badge" alt="issues"></a>
@@ -16,15 +18,12 @@
 
 ## Why use `readable` 🤔
 
-### Save time and effort
+### Save time and effort (shortcuts)
 
 - no more helpers or extensions scattered in the project .
-- helpers already built and ready to be used out of the box .
-- you will find many uses cases where `readable` can be helpful
 
 ```dart
  /// for flutter
-
  Widget build(BuildContext context){
     /// Before ::
     final width = MediaQuery.of(context).size.width;
@@ -33,8 +32,6 @@
 
     /// Before ::
     final h1 = Theme.of(context).textTheme.headline1;
-    /// After::
-    final h1 = context.headline1;
     /// or
     final h1 = context.h1;
  }
@@ -44,11 +41,8 @@
 /// for dart
   final data = [1,2,3,4,5];
   final total = data.sum(); // 15
-
   final minimNumber = data.min(); // 1
-
   final maximumNumber = data.max(); // 5
-
   final average = data.average(); // 3
   // ...etc
 ```
@@ -83,9 +77,7 @@
 
 ### Stable
 
-unlike other helpers you build in different projects most likely will not test and maintain them ,
-
-BUT **`readable`** comes with 100% test coverage .
+mostly the helpers you build in different projects most likely will not test and maintain them here every thing is 100% test covered,
 
 ## how to use them
 
@@ -99,17 +91,5 @@ import 'package:queen/queen.dar';
 import 'package:readable/readable.dart';
 /// * with flutter
 import 'package:flutter_readable/flutter_readable.dart';
-```
 
-Example ::
-
-```dart
-Widget build(BuildContext context){
-  /// replace the shortcut with any from below
-  final result = context.shortcut;
-  /// not just `BuildContext` you can use it with any other data type
-  final numbers = [1,2,3,4,5];
-
-  final average = numbers.average(); // 3
- }
 ```
