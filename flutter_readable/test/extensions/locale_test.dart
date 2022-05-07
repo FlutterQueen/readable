@@ -61,4 +61,19 @@ void main() {
       }
     });
   });
+
+  group('Is Locale', () {
+    test('isArabic', () {
+      expect(const Locale('AR').isArabic, isTrue);
+      expect(const Locale('ar').isArabic, isTrue);
+      expect(const Locale('AR', 'EG').isArabic, isTrue);
+      expect(const Locale('FR').isArabic, isFalse);
+    });
+    test('isEnglish', () {
+      expect(const Locale('EN').isEnglish, isTrue);
+      expect(const Locale('en').isEnglish, isTrue);
+      expect(const Locale('En', 'us').isEnglish, isTrue);
+      expect(const Locale('FR').isEnglish, isFalse);
+    });
+  });
 }
