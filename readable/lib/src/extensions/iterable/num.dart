@@ -9,18 +9,7 @@ extension ReadableNumListX on Iterable<num> {
 
   /// * return list summation
   /// * return `null` if list is empty
-  num? sumOrNull() {
-    if (isEmpty) return null;
-
-    /// holder for summation
-    num sum = 0;
-    for (final n in this) {
-      // for each element add it to summation
-      sum += n;
-    }
-    // return the summation result
-    return sum;
-  }
+  num? sumOrNull() => isEmpty ? null : fold(0, (a, b) => a! + b);
 
   /// * return list summation
   /// * return `value` if list is empty

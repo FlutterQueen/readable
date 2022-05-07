@@ -4,18 +4,6 @@ import 'dart:math';
 ///sss
 
 extension ReadAbleIterable<T> on Iterable<T> {
-  /// * return the `length` without `null` elements
-  int countWithoutNull() {
-    /// create a new list
-    final holder = List.from(this);
-
-    /// remove null elements
-    holder.removeWhere((element) => element == null);
-
-    /// return the holder elements count
-    return holder.length;
-  }
-
   /// * alias for `length`
   /// * but can filter before if needed
   int count([
@@ -111,5 +99,5 @@ extension ReadAbleIterable<T> on Iterable<T> {
   }
 
   /// return true if iteable not contains input
-  bool notContains(Iterable<T> input) => !contains(input);
+  // bool notContains(Iterable<T> input) => !contains(input);
 }
