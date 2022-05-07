@@ -1,3 +1,7 @@
+## 0.0.5
+
+- more extensions and helpers
+
 ## 0.0.4
 
 - removeWhereNull
