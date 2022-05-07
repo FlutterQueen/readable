@@ -101,8 +101,8 @@ void main() {
     expect(last.isInThisYear, isFalse);
   });
   test('isInTheFuture', () {
-    final future = DateTime.now().add(const Duration(milliseconds: 1));
-    final past = DateTime.now().subtract(const Duration(milliseconds: 1));
+    final future = DateTime.now().add(const Duration(minutes: 1));
+    final past = DateTime.now().subtract(const Duration(minutes: 1));
     expect(future.isInTheFuture, isTrue);
     expect(past.isInTheFuture, isFalse);
   });
