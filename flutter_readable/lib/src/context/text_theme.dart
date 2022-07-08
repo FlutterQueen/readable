@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension QXTextTheme on BuildContext {
+extension RContextTextTheme on BuildContext {
   /// shortcut for `Theme.of(context).textTheme.bodyText1`
   TextStyle? get bodyText1 => Theme.of(this).textTheme.bodyText1;
 

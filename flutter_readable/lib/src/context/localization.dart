@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension QXLocalization on BuildContext {
+extension RContextLocalization on BuildContext {
   /// * Localization shortcuts
 
   /// shortcut for `Directionality.of(context) == TextDirection.rtl``

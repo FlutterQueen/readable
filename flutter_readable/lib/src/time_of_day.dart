@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension ReadableTodX on TimeOfDay {
+extension RTimeOfDay on TimeOfDay {
   /// * `true` if the date in the morning, `false` otherwise.
   bool get isAm => hour < 12;
 

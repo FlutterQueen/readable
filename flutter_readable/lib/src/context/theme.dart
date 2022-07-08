@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension QXTheme on BuildContext {
+extension RContextTheme on BuildContext {
   /// * Theme shortcuts
   /// shortcut for `Theme.of(context)`
   ThemeData get theme => Theme.of(this);

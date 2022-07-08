@@ -9,7 +9,7 @@ const _rtlLocales = <String>[
 ];
 
 /// extensions on the locale
-extension NLocaleExt on Locale {
+extension RLocale on Locale {
   /// return `true` if this language is written from `Right-to-Left`
   bool get isRTL => _rtlLocales.contains(languageCode.toLowerCase());
 

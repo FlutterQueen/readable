@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// * MediaQuery shortcuts
-extension QMediaQueryX on BuildContext {
+extension RContextMediaQuery on BuildContext {
   /// shortcut for `MediaQuery.of(context)`
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
