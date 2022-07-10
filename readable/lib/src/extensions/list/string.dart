@@ -1,5 +1,5 @@
 ///
-extension ReadableStringList on List<String?> {
+extension RStringList on List<String?> {
   /// remove empty
   /// ! DOES NOT REMOVE NULL VALUES
   void removeWhereEmpty() => removeWhere(

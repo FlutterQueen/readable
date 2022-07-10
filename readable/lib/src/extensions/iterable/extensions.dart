@@ -3,7 +3,7 @@ import 'dart:math';
 
 ///sss
 
-extension ReadAbleIterable<T> on Iterable<T> {
+extension RIterable<T> on Iterable<T> {
   /// * alias for `length`
   /// * but can filter before if needed
   int count([

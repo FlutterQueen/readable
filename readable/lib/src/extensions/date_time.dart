@@ -1,11 +1,18 @@
 // TODO :: uncomment only tested ones
 ///
-extension ReadableDateTime on DateTime {
+extension RDateTime on DateTime {
   /// * `true` if the date in the morning, `false` otherwise.
   bool get isAm => hour < 12;
 
   /// * `true` if the date in the evening, `false` otherwise.
   bool get isPm => hour >= 12;
+
+  DateTime get nextDay => add(const Duration(days: 1));
+  DateTime get sameDayNextWeek => add(const Duration(days: 7));
+  // DateTime get sameDayNextMonth => add(const Duration(days: 7));
+  DateTime get previousDay => subtract(const Duration(days: 1));
+  DateTime get sameDayPreviousWeek => subtract(const Duration(days: 7));
+  // DateTime get sameDayPreviousMonth => subtract(const Duration(days: 7));
 
   /// * creates new instance of [DateTime] with the same date
   /// * but overrides the values of the given parameters
@@ -29,10 +36,10 @@ extension ReadableDateTime on DateTime {
       );
 
   /// * return [true] if the date is today, [false] otherwise.
-  bool get isToday {
-    final now = DateTime.now();
-    return now.year == year && now.month == month && now.day == day;
-  }
+  bool get isToday => isSameDay(DateTime.now());
+
+  bool isSameDay(DateTime date) =>
+      date.year == year && date.month == month && date.day == day;
 
   /// * return [true] if the date is tomorrow, [false] otherwise.
   bool get isTomorrow {
@@ -221,4 +228,41 @@ extension ReadableDateTime on DateTime {
   // bool get isLeapYear {
   //   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
   // }
+
+  DateTime get dateOnly => DateTime(year, month, day);
+
+  DateTime withTime({
+    int hour = 0,
+    int minute = 0,
+    int second = 0,
+    int millisecond = 0,
+    int microsecond = 0,
+  }) =>
+      DateTime(year, month, day, minute, second, microsecond, microsecond);
 }
+
+///  TODO :: 
+/// *  firstDayOfMonth
+/// *  lastDayOfMonth
+/// 
+/// *  firstDayOfWeek
+/// *  lastDayOfWeek
+/// 
+/// *  firstDayNextWeek
+/// *  firstDayNextMonth
+/// *  firstDayNextYear
+/// 
+/// *  lastDayNextWeek
+/// *  lastDayNextMonth
+/// *  lastDayNextYear
+/// 
+/// *  firstDayPreviousWeek
+/// *  firstDayPreviousMonth
+/// *  firstDayPreviousYear
+/// 
+/// *  lastDayPreviousWeek
+/// *  lastDayPreviousMonth
+/// *  lastDayPreviousYeara
+
+
+/// * isSameWeek

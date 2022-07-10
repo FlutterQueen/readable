@@ -1,5 +1,5 @@
 ///
-extension StringReadableX on String {
+extension RString on String {
   /// Checks if string is Palindrome.
   bool get isPalindrome => reversed == this;
 
@@ -8,13 +8,12 @@ extension StringReadableX on String {
 
   /// Uppercase first letter inside string and let the others lowercase
   /// Example: your name => Your name
-
   String get capitalizeFirst {
     if (isEmpty) return this;
     return this[0].toUpperCase() + substring(1).toLowerCase();
   }
 
-  ///Uppercase first letter inside each word in string
+  /// Uppercase first letter inside each word in string
   /// Example: your name => Your Name
   String get capitalize {
     if (isEmpty) return this;

@@ -1,5 +1,5 @@
 /// *
-extension ReadAbleIterableNull<T> on List<T?> {
+extension RIterableNull<T> on List<T?> {
   /// * return the `length` without `null` elements
   void removeWhereNull() {
     /// remove null elements

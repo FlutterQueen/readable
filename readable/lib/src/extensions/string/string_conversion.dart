@@ -1,5 +1,5 @@
 /// convert string to different types
-extension StringConvertX on String {
+extension RStringConvert on String {
   ///Convert  String to List of Characters
   List<String> toChars() => split('');
 

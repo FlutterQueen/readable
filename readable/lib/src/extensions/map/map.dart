@@ -1,5 +1,5 @@
 ///
-extension MapExt<K, V> on Map<K, V> {
+extension RMap<K, V> on Map<K, V> {
   /// * return a new map with the `null` values from the original map only
   Map<K, V> whereNull() {
     final map = <K, V>{};

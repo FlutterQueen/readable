@@ -3,7 +3,7 @@
 import 'package:readable/src/extensions/iterable/extensions.dart';
 
 /// list `readableX`
-extension ReadableNumListX on Iterable<num> {
+extension RNumList on Iterable<num> {
   ///  how many elements == zero
   int countZeros() => countValue(0);
 
