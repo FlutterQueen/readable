@@ -7,14 +7,14 @@ extension RString on String {
   String get reversed => split('').reversed.join();
 
   /// Uppercase first letter inside string and let the others lowercase
-  /// Example: your name => Your name
+  /// Example:` your name => Your name`
   String get capitalizeFirst {
     if (isEmpty) return this;
     return this[0].toUpperCase() + substring(1).toLowerCase();
   }
 
   /// Uppercase first letter inside each word in string
-  /// Example: your name => Your Name
+  /// Example: `your name => Your Name`
   String get capitalize {
     if (isEmpty) return this;
     return split(' ').map((value) => value.capitalizeFirst).join(' ');

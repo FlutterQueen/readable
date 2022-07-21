@@ -8,9 +8,11 @@ extension RDateTime on DateTime {
   bool get isPm => hour >= 12;
 
   DateTime get nextDay => add(const Duration(days: 1));
+
   DateTime get sameDayNextWeek => add(const Duration(days: 7));
   // DateTime get sameDayNextMonth => add(const Duration(days: 7));
   DateTime get previousDay => subtract(const Duration(days: 1));
+
   DateTime get sameDayPreviousWeek => subtract(const Duration(days: 7));
   // DateTime get sameDayPreviousMonth => subtract(const Duration(days: 7));
 
@@ -38,26 +40,16 @@ extension RDateTime on DateTime {
   /// * return [true] if the date is today, [false] otherwise.
   bool get isToday => isSameDay(DateTime.now());
 
-  bool isSameDay(DateTime date) =>
+  bool isSameDay(
+    DateTime date,
+  ) =>
       date.year == year && date.month == month && date.day == day;
 
   /// * return [true] if the date is tomorrow, [false] otherwise.
-  bool get isTomorrow {
-    final now = DateTime.now();
-    final tomorrow = now.add(const Duration(days: 1));
-    return tomorrow.year == year &&
-        tomorrow.month == month &&
-        tomorrow.day == day;
-  }
+  bool get isTomorrow => isSameDay(DateTime.now().nextDay);
 
   /// * return [true] if the date is yesterday, [false] otherwise.
-  bool get isYesterday {
-    final now = DateTime.now();
-    final yesterday = now.subtract(const Duration(days: 1));
-    return yesterday.year == year &&
-        yesterday.month == month &&
-        yesterday.day == day;
-  }
+  bool get isYesterday => isSameDay(DateTime.now().previousDay);
 
   /// * return [true] if the date is In This Month, [false] otherwise.
   bool get isInThisMonth {
@@ -174,7 +166,7 @@ extension RDateTime on DateTime {
       isFriday &&
       month + 1 == DateTime(year, month, day + DateTime.daysPerWeek).month;
 
-  /// * return   [true] the first saturday of the month
+  /// * return [true] the first saturday of the month
   /// TODO :: date wont work with last month of the year
   // bool get isFirstSaturdayThisMonth =>
   //     isSaturday &&
@@ -224,10 +216,10 @@ extension RDateTime on DateTime {
   // bool isBetween(DateTime start, DateTime end) =>
   //     start.isBefore(this) && end.isAfter(this);
 
-  // /// returns true if date year is leaap year
-  // bool get isLeapYear {
-  //   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
-  // }
+  /// returns true if date year is leaap year
+  bool get isLeapYear {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+  }
 
   DateTime get dateOnly => DateTime(year, month, day);
 

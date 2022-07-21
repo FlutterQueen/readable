@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
-///sss
+/// RIterable
 
 extension RIterable<T> on Iterable<T> {
   /// * alias for `length`
@@ -10,9 +10,6 @@ extension RIterable<T> on Iterable<T> {
     bool Function(T element)? mapper,
   ]) =>
       mapper == null ? length : where(mapper).length;
-
-  /// * return the `count` of the `null` elements
-  int countNull() => count((e) => e == null);
 
   /// * return the `length` of the NOT `null` elements
   int countNotNull() => count((e) => e != null);
@@ -46,6 +43,9 @@ extension RIterable<T> on Iterable<T> {
   /// * return a random element from list
   /// ! throws `StateError` if list is empty
   T get random => elementAt(Random().nextInt(length));
+
+  /// * return a random element from list or the e if list is empty
+  T randomOr(T e) => isEmpty ? e : random;
 
   /// * return the first element
   /// * return `null` if isEmpty
@@ -91,13 +91,6 @@ extension RIterable<T> on Iterable<T> {
     return result;
   }
 
-  ///The takeUntil method returns items in the collection until the given callback returns true
-  ///If callback never returns true, the takeUntil method will return all items in the collection.
-  Iterable<T> takeUntil(bool Function(T e) test) {
-    final list = where(test).toList();
-    return list.isEmpty ? this : list;
-  }
-
   /// return true if iteable not contains input
-  // bool notContains(Iterable<T> input) => !contains(input);
+  bool notContains(Iterable<T> input) => !contains(input);
 }

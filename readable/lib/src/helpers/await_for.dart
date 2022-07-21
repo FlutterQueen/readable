@@ -1,9 +1,8 @@
+/// instead of `await Future.delayed(const Duration(seconds:1));`
+/// do         `await forSeconds(x)`
 Future<T> forSeconds<T>(int seconds) => Future.delayed(
       Duration(seconds: seconds),
     );
-
-/// instead of `await Future.delayed(const Duration(seconds:1));`
-/// use `await oneSecond();`
 
 /// instead of `await Future.delayed(const Duration(seconds:1));`
 Future<void> oneSecond() => forSeconds(1);

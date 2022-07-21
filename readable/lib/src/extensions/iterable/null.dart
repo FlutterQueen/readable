@@ -1,3 +1,5 @@
+import 'package:readable/src/extensions/iterable/extensions.dart';
+
 /// *
 extension RIterableNull<T> on List<T?> {
   /// * return the `length` without `null` elements
@@ -17,4 +19,7 @@ extension RIterableNull<T> on List<T?> {
     /// return the holder elements count
     return holder.length;
   }
+
+  /// * return the `count` of the `null` elements
+  int countNull() => count((e) => e == null);
 }

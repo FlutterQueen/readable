@@ -10,6 +10,9 @@ void main() {
     test('it return `0` if the list is empty', () {
       expect([].count(), 0);
     });
+    test('it can count and filter', () {
+      expect([1, 2, 3, 4, 5].count((e) => e > 3), 2);
+    });
   });
   group('countWithoutNull function', () {
     test('return the `length` without null elements', () {
@@ -118,24 +121,6 @@ void main() {
       expect([].mapWithIndex((index, e) => null), []);
       expect([5, 4, 6].mapWithIndex((index, e) => index), [0, 1, 2]);
       expect([5, 4, 6].mapWithIndex((index, e) => index * 2), [0, 2, 4]);
-    });
-  });
-  group('takeUntil function', () {
-    test(
-        'returns items in the collection until the given callback returns true',
-        () {
-      expect(
-        [1, 2, 3, 4, 5, 6].takeUntil((e) => e % 2 == 0),
-        [2, 4, 6],
-      );
-    });
-    test(
-        'If callback never returns  true, the takeUntil method will return all items in the collection.',
-        () {
-      expect(
-        [1, 2, 3, 4, 5, 6].takeUntil((e) => e - 10 == 0),
-        [1, 2, 3, 4, 5, 6],
-      );
     });
   });
   group('counter family', () {
